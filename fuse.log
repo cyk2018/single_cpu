@@ -1,0 +1,43 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_isim_beh.exe -prj C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_beh.prj work.Single_Cpu_tb work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Register.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Pc.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Memory.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Inst_Rom.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Expand.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Controller.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Alu.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_5.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_4.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_3.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_2.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_1.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module Pc
+Compiling module Inst_Rom
+Compiling module Stage_1
+Compiling module Register
+Compiling module Controller
+Compiling module Expand
+Compiling module Stage_2
+Compiling module Alu
+Compiling module Stage_3
+Compiling module Memory
+Compiling module Stage_4
+Compiling module Stage_5
+Compiling module Single_Cpu
+Compiling module Single_Cpu_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 15 Verilog Units
+Built simulation executable C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_isim_beh.exe
+Fuse Memory Usage: 28648 KB
+Fuse CPU Usage: 484 ms

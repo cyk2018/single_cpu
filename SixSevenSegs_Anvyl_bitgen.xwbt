@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\SixSevenSegs_Anvyl.ncd
+OUTFILE=C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\SixSevenSegs_Anvyl.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg484
+WORKINGDIR=C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu
+LICENSE=WebPack
+USER_INFO=__0_0_0

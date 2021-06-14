@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Inst_Rom.xst" -ofn "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Inst_Rom.syr" 
