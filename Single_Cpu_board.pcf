@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Jun 15 12:29:54 2021
+// Written by: Map P.20131013 on Tue Jun 15 12:46:14 2021
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -17,6 +17,7 @@ COMP "En<2>" LOCATE = SITE "P19" LEVEL 1;
 COMP "En<3>" LOCATE = SITE "N16" LEVEL 1;
 COMP "En<4>" LOCATE = SITE "AB21" LEVEL 1;
 COMP "En<5>" LOCATE = SITE "AA20" LEVEL 1;
+COMP "Reset" LOCATE = SITE "E6" LEVEL 1;
 COMP "Switch<0>" LOCATE = SITE "V5" LEVEL 1;
 COMP "Switch<1>" LOCATE = SITE "U4" LEVEL 1;
 COMP "Switch<2>" LOCATE = SITE "V3" LEVEL 1;

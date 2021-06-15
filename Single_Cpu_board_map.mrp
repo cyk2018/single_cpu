@@ -11,23 +11,23 @@ Target Device  : xc6slx45
 Target Package : csg484
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Jun 15 12:29:34 2021
+Mapped Date    : Tue Jun 15 12:45:53 2021
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:   12
 Slice Logic Utilization:
-  Number of Slice Registers:                   111 out of  54,576    1%
-    Number used as Flip Flops:                  79
+  Number of Slice Registers:                   119 out of  54,576    1%
+    Number used as Flip Flops:                  85
     Number used as Latches:                     32
     Number used as Latch-thrus:                  0
-    Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      3,634 out of  27,288   13%
-    Number used as logic:                    3,586 out of  27,288   13%
+    Number used as AND/OR logics:                2
+  Number of Slice LUTs:                      3,666 out of  27,288   13%
+    Number used as logic:                    3,619 out of  27,288   13%
       Number using O6 output only:           2,661
-      Number using O5 output only:              66
-      Number using O5 and O6:                  859
+      Number using O5 output only:              65
+      Number using O5 and O6:                  893
       Number used as ROM:                        0
     Number used as Memory:                      44 out of   6,408    1%
       Number used as Dual Port RAM:             44
@@ -36,21 +36,21 @@ Slice Logic Utilization:
         Number using O5 and O6:                 44
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:      4
-      Number with same-slice register load:      1
+    Number used exclusively as route-thrus:      3
+      Number with same-slice register load:      0
       Number with same-slice carry load:         3
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 1,249 out of   6,822   18%
+  Number of occupied Slices:                 1,225 out of   6,822   17%
   Number of MUXCYs used:                     2,144 out of  13,644   15%
-  Number of LUT Flip Flop pairs used:        3,635
-    Number with an unused Flip Flop:         3,526 out of   3,635   97%
-    Number with an unused LUT:                   1 out of   3,635    1%
-    Number of fully used LUT-FF pairs:         108 out of   3,635    2%
-    Number of unique control sets:               9
+  Number of LUT Flip Flop pairs used:        3,671
+    Number with an unused Flip Flop:         3,585 out of   3,671   97%
+    Number with an unused LUT:                   5 out of   3,671    1%
+    Number of fully used LUT-FF pairs:          81 out of   3,671    2%
+    Number of unique control sets:               7
     Number of slice register sites lost
-      to control set restrictions:              33 out of  54,576    1%
+      to control set restrictions:              27 out of  54,576    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -59,8 +59,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        21 out of     320    6%
-    Number of LOCed IOBs:                       20 out of      21   95%
+  Number of bonded IOBs:                        22 out of     320    6%
+    Number of LOCed IOBs:                       21 out of      22   95%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of     116    0%
@@ -87,11 +87,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.71
+Average Fanout of Non-Clock Nets:                4.65
 
 Peak Memory Usage:  4644 MB
-Total REAL time to MAP completion:  21 secs 
-Total CPU time to MAP completion:   19 secs 
+Total REAL time to MAP completion:  22 secs 
+Total CPU time to MAP completion:   22 secs 
 
 Table of Contents
 -----------------
@@ -122,44 +122,44 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net Single_Cpu_real/clock_inv
    is sourced by a combinatorial pin. This is not good design practice. Use the
    CE pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers15_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers5_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4_RAMD_D1_O> is
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers2_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers12_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers2_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers3_RAMD_D1_O> is
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers15_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers14_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1_RAMD_D1_O> is
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers11_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers5_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers3_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network
-   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers61/SPO has no load.
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62/SPO has no load.
 INFO:LIT:395 - The above info message is repeated 3 more times for the following
    (max. 5 shown):
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers61/SPO,
    Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers162/SPO,
-   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62/SPO,
    Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers161/SPO
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
@@ -192,7 +192,7 @@ INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
    1.260 Volts)
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
-INFO:Place:834 - Only a subset of IOs are locked. Out of 21 IOs, 20 are locked
+INFO:Place:834 - Only a subset of IOs are locked. Out of 22 IOs, 21 are locked
    and 1 are not locked. If you would like to print the names of these IOs,
    please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
 INFO:Pack:1650 - Map created a placed design.
@@ -226,6 +226,7 @@ Section 6 - IOB Properties
 | En<3>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | En<4>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | En<5>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Reset                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | Segs<0>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | Segs<1>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | Segs<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |

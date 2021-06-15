@@ -67,3 +67,11 @@ map -intstyle ise -p xc6slx45-csg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off Single_Cpu_board_map.ncd Single_Cpu_board.ncd Single_Cpu_board.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Single_Cpu_board.twx Single_Cpu_board.ncd -o Single_Cpu_board.twr Single_Cpu_board.pcf -ucf Single_Cpu.ucf 
 bitgen -intstyle ise -f Single_Cpu_board.ut Single_Cpu_board.ncd 
+xst -intstyle ise -ifn "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_board.xst" -ofn "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_board.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Single_Cpu.ucf -p xc6slx45-csg484-3 Single_Cpu_board.ngc Single_Cpu_board.ngd  
+xst -intstyle ise -ifn "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_board.xst" -ofn "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_board.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Single_Cpu.ucf -p xc6slx45-csg484-3 Single_Cpu_board.ngc Single_Cpu_board.ngd  
+map -intstyle ise -p xc6slx45-csg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Single_Cpu_board_map.ncd Single_Cpu_board.ngd Single_Cpu_board.pcf 
+par -w -intstyle ise -ol high -mt off Single_Cpu_board_map.ncd Single_Cpu_board.ncd Single_Cpu_board.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Single_Cpu_board.twx Single_Cpu_board.ncd -o Single_Cpu_board.twr Single_Cpu_board.pcf -ucf Single_Cpu.ucf 
+bitgen -intstyle ise -f Single_Cpu_board.ut Single_Cpu_board.ncd 

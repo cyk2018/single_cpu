@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Single_Cpu_board(
     input                                               CLK ,
+    input                                               Reset   ,
     input           [5:0]                               Switch  ,
     output          [7:0]                               Segs    ,
     output          [5:0]                               En
@@ -30,23 +31,23 @@ module Single_Cpu_board(
 
     ClockDivider Input_ClockDivider
     (
-        .Reset(1'b0), 
+        .Reset(Reset), 
         .Clock(CLK), 
         .DividedClock(ClockInput)
     );
 
-    ClockDividerBoard M1_ClockDivider(.Reset(1'b0), 
+    ClockDividerBoard M1_ClockDivider(.Reset(Reset), 
     .Clock(CLK), .DividedClock(Clock));
     //delay the clock
     
     SevenSegsController M2_SevenSegsController(
-    .Reset(1'b0), .Clock(Clock), 
+    .Reset(Reset), .Clock(Clock), 
     .DisplayEnables(Switch), 
     .Data(data), .SevenSegsAndPoint(Segs), .ShowOneofSix(En));
 
     Single_Cpu Single_Cpu_real(
         .clock(ClockInput),
-        .reset(1'b0),
+        .reset(Reset),
         .data_result(data)
     );
 

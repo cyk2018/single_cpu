@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.66 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.66 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: Single_Cpu_board.prj
 
@@ -194,7 +194,7 @@ WARNING:HDLCompiler:817 - "C:\Users\29593\Documents\cyk\computer-system\single_c
 WARNING:HDLCompiler:413 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v" Line 51: Result of 64-bit expression is truncated to fit in 32-bit target.
 
 Elaborating module <Stage_5>.
-WARNING:HDLCompiler:189 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu_board.v" Line 50: Size mismatch in connection of port <data_result>. Formal port size is 32-bit while actual signal size is 24-bit.
+WARNING:HDLCompiler:189 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu_board.v" Line 51: Size mismatch in connection of port <data_result>. Formal port size is 32-bit while actual signal size is 24-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -209,23 +209,25 @@ Unit <Single_Cpu_board> synthesized.
 Synthesizing Unit <ClockDivider>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\ClockDivider.v".
         COUNTER = 32'b00000101111101011110000100000000
-    Found 1-bit register for signal <DividedClock>.
     Found 33-bit register for signal <clock_count>.
+    Found 1-bit register for signal <DividedClock>.
     Found 33-bit adder for signal <clock_count[32]_GND_2_o_add_1_OUT> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  34 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <ClockDivider> synthesized.
 
 Synthesizing Unit <ClockDividerBoard>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\ClockDividerBoard.v".
         COUNTER = 32'b00000000000000001100001101010000
-    Found 1-bit register for signal <DividedClock>.
     Found 33-bit register for signal <clock_count>.
+    Found 1-bit register for signal <DividedClock>.
     Found 33-bit adder for signal <clock_count[32]_GND_3_o_add_1_OUT> created at line 40.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  34 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <ClockDividerBoard> synthesized.
 
 Synthesizing Unit <SevenSegsController>.
@@ -237,7 +239,7 @@ Synthesizing Unit <SevenSegsController>.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   3 D-type flip-flop(s).
-	inferred   7 Multiplexer(s).
+	inferred   8 Multiplexer(s).
 Unit <SevenSegsController> synthesized.
 
 Synthesizing Unit <SevenSegs>.
@@ -595,7 +597,7 @@ WARNING:Xst:647 - Input <address<31:8>> is never used. This port will be preserv
     Found 32x64-bit single-port RAM <Mram_mem> for signal <mem>.
     Summary:
 	inferred   1 RAM(s).
-	inferred   1 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 Unit <Memory> synthesized.
 
 Synthesizing Unit <Stage_5>.
@@ -694,10 +696,12 @@ Macro Statistics
  62-bit comparator lessequal                           : 2
  63-bit comparator lessequal                           : 2
  64-bit comparator lessequal                           : 2
-# Multiplexers                                         : 2043
- 1-bit 2-to-1 multiplexer                              : 2019
+# Multiplexers                                         : 2047
+ 1-bit 2-to-1 multiplexer                              : 2020
  1-bit 6-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 14
+ 33-bit 2-to-1 multiplexer                             : 2
  4-bit 7-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 5
@@ -747,7 +751,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_mem> will be implemented on LUTs eit
     | Port A                                                              |
     |     aspect ratio   | 32-word x 64-bit                    |          |
     |     clkA           | connected to signal <clock>         | fall     |
-    |     weA            | connected to signal <memwrite>      | high     |
+    |     weA            | connected to internal node          | high     |
     |     addrA          | connected to signal <address>       |          |
     |     diA            | connected to signal <("00000000000000000000000000000000",mem_write_data)> |          |
     |     doA            | connected to internal node          |          |
@@ -762,7 +766,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_registers> will be implemented on LU
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     clkA           | connected to signal <clock>         | fall     |
-    |     weA            | connected to internal node          | high     |
+    |     weA            | connected to signal <regwrite_register_w[4]_AND_7_o_0> | high     |
     |     addrA          | connected to signal <register_w>    |          |
     |     diA            | connected to signal <write_data>    |          |
     -----------------------------------------------------------------------
@@ -778,7 +782,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_registers1> will be implemented on L
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     clkA           | connected to signal <clock>         | fall     |
-    |     weA            | connected to internal node          | high     |
+    |     weA            | connected to signal <regwrite_register_w[4]_AND_7_o_1> | high     |
     |     addrA          | connected to signal <register_w>    |          |
     |     diA            | connected to signal <write_data>    |          |
     -----------------------------------------------------------------------
@@ -852,8 +856,8 @@ Macro Statistics
  62-bit comparator lessequal                           : 2
  63-bit comparator lessequal                           : 2
  64-bit comparator lessequal                           : 2
-# Multiplexers                                         : 2042
- 1-bit 2-to-1 multiplexer                              : 2018
+# Multiplexers                                         : 2043
+ 1-bit 2-to-1 multiplexer                              : 2019
  1-bit 6-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 14
  4-bit 7-to-1 multiplexer                              : 1
@@ -900,65 +904,65 @@ WARNING:Xst:2677 - Node <Stage_1/Stage_1_Pc/new_pc_28> of sequential type is unc
 WARNING:Xst:2677 - Node <Stage_1/Stage_1_Pc/new_pc_29> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_1/Stage_1_Pc/new_pc_30> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_1/Stage_1_Pc/new_pc_31> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem2> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem1> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem5> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem3> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem4> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem8> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem6> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem2> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem3> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem7> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem5> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem6> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem8> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem9> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem10> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem13> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem11> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem12> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem16> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem14> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem10> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem11> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem15> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem19> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem17> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem13> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem14> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem18> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem16> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem17> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem19> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem20> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem21> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem24> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem22> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem23> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem27> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem25> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem21> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem22> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem26> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem30> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem28> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem24> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem25> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem29> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem27> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem28> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem30> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem31> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem32> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem35> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem33> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem34> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem38> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem36> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem32> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem33> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem37> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem41> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem39> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem35> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem36> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem40> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem38> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem39> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem41> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem42> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem43> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem46> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem44> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem45> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem49> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem47> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem43> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem44> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem48> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem52> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem50> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem46> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem47> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem51> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem49> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem50> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem52> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem53> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem54> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem57> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem55> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem56> of sequential type is unconnected in block <Single_Cpu>.
-WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem58> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem54> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem55> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem59> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem57> of sequential type is unconnected in block <Single_Cpu>.
+WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem58> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem62> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem60> of sequential type is unconnected in block <Single_Cpu>.
 WARNING:Xst:2677 - Node <Stage_4/Stage_4_Memory/Mram_mem61> of sequential type is unconnected in block <Single_Cpu>.
@@ -975,10 +979,12 @@ Optimizing unit <Alu> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Single_Cpu_board, actual ratio is 19.
+Found area constraint ratio of 100 (+ 5) on block Single_Cpu_board, actual ratio is 20.
+FlipFlop Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_2 has been replicated 1 time(s)
 FlipFlop Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 has been replicated 1 time(s)
-FlipFlop Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_5 has been replicated 1 time(s)
-FlipFlop Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_6 has been replicated 1 time(s)
+FlipFlop Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_4 has been replicated 3 time(s)
+FlipFlop Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_5 has been replicated 2 time(s)
+FlipFlop Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_6 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -986,8 +992,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 79
- Flip-Flops                                            : 79
+# Registers                                            : 85
+ Flip-Flops                                            : 85
 
 =========================================================================
 
@@ -1010,22 +1016,22 @@ Top Level Output File Name         : Single_Cpu_board.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 7345
+# BELS                             : 7412
 #      GND                         : 1
 #      INV                         : 18
 #      LUT1                        : 68
-#      LUT2                        : 156
+#      LUT2                        : 223
 #      LUT3                        : 582
 #      LUT4                        : 1582
-#      LUT5                        : 873
-#      LUT6                        : 968
+#      LUT5                        : 872
+#      LUT6                        : 969
 #      MUXCY                       : 1901
 #      VCC                         : 1
 #      XORCY                       : 1195
-# FlipFlops/Latches                : 111
-#      FD                          : 8
+# FlipFlops/Latches                : 117
+#      FDC                         : 78
 #      FDE                         : 2
-#      FDR                         : 69
+#      FDP                         : 5
 #      LD                          : 32
 # RAMS                             : 14
 #      RAM32M                      : 10
@@ -1033,8 +1039,8 @@ Primitive and Black Box Usage:
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 20
-#      IBUF                        : 6
+# IO Buffers                       : 21
+#      IBUF                        : 7
 #      OBUF                        : 14
 # DSPs                             : 8
 #      DSP48A1                     : 8
@@ -1046,22 +1052,22 @@ Selected Device : 6slx45csg484-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             111  out of  54576     0%  
- Number of Slice LUTs:                 4295  out of  27288    15%  
-    Number used as Logic:              4247  out of  27288    15%  
+ Number of Slice Registers:             117  out of  54576     0%  
+ Number of Slice LUTs:                 4362  out of  27288    15%  
+    Number used as Logic:              4314  out of  27288    15%  
     Number used as Memory:               48  out of   6408     0%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4296
-   Number with an unused Flip Flop:    4185  out of   4296    97%  
-   Number with an unused LUT:             1  out of   4296     0%  
-   Number of fully used LUT-FF pairs:   110  out of   4296     2%  
-   Number of unique control sets:         7
+ Number of LUT Flip Flop pairs used:   4365
+   Number with an unused Flip Flop:    4248  out of   4365    97%  
+   Number with an unused LUT:             3  out of   4365     0%  
+   Number of fully used LUT-FF pairs:   114  out of   4365     2%  
+   Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                          21
- Number of bonded IOBs:                  21  out of    320     6%  
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of    320     6%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
@@ -1090,7 +1096,7 @@ Clock Signal                                                                    
 -----------------------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
 CLK                                                                                            | BUFGP                                                          | 68    |
 M1_ClockDivider/DividedClock                                                                   | NONE(M2_SevenSegsController/select_display_2)                  | 3     |
-Input_ClockDivider/DividedClock                                                                | NONE(Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers61)| 22    |
+Input_ClockDivider/DividedClock                                                                | NONE(Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62)| 28    |
 Single_Cpu_real/Stage_3/Stage_3_Alu/_n0214(Single_Cpu_real/Stage_3/Stage_3_Alu/Mmux__n021411:O)| BUFG(*)(Single_Cpu_real/Stage_3/Stage_3_Alu/alu_result_31)     | 32    |
 -----------------------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
@@ -1106,9 +1112,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 7.068ns (Maximum Frequency: 141.487MHz)
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 7.363ns
+   Minimum period: 6.325ns (Maximum Frequency: 158.108MHz)
+   Minimum input arrival time before clock: 4.836ns
+   Maximum output required time after clock: 7.341ns
    Maximum combinational path delay: 7.545ns
 
 Timing Details:
@@ -1117,76 +1123,136 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 4.528ns (frequency: 220.862MHz)
-  Total number of paths / destination ports: 3368 / 136
+  Clock period: 5.185ns (frequency: 192.880MHz)
+  Total number of paths / destination ports: 3368 / 70
 -------------------------------------------------------------------------
-Delay:               4.528ns (Levels of Logic = 2)
-  Source:            M1_ClockDivider/clock_count_6 (FF)
-  Destination:       M1_ClockDivider/clock_count_0 (FF)
+Delay:               5.185ns (Levels of Logic = 3)
+  Source:            Input_ClockDivider/clock_count_19 (FF)
+  Destination:       Input_ClockDivider/DividedClock (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: M1_ClockDivider/clock_count_6 to M1_ClockDivider/clock_count_0
+  Data Path: Input_ClockDivider/clock_count_19 to Input_ClockDivider/DividedClock
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.447   0.981  M1_ClockDivider/clock_count_6 (M1_ClockDivider/clock_count_6)
-     LUT6:I0->O            1   0.203   0.944  M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o<32>1 (M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o<32>)
-     LUT6:I0->O           34   0.203   1.320  M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o<32>7 (M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o)
-     FDR:R                     0.430          M1_ClockDivider/clock_count_0
+     FDC:C->Q              2   0.447   0.981  Input_ClockDivider/clock_count_19 (Input_ClockDivider/clock_count_19)
+     LUT6:I0->O            1   0.203   0.924  Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o<32>5 (Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o<32>4)
+     LUT6:I1->O           34   0.203   1.321  Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o<32>7 (Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o)
+     LUT2:I1->O            1   0.205   0.579  Input_ClockDivider/_n0018_inv1 (Input_ClockDivider/_n0018_inv)
+     FDE:CE                    0.322          Input_ClockDivider/DividedClock
     ----------------------------------------
-    Total                      4.528ns (1.283ns logic, 3.245ns route)
-                                       (28.3% logic, 71.7% route)
+    Total                      5.185ns (1.380ns logic, 3.805ns route)
+                                       (26.6% logic, 73.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'M1_ClockDivider/DividedClock'
-  Clock period: 2.928ns (frequency: 341.588MHz)
-  Total number of paths / destination ports: 15 / 6
+  Clock period: 2.405ns (frequency: 415.826MHz)
+  Total number of paths / destination ports: 7 / 3
 -------------------------------------------------------------------------
-Delay:               2.928ns (Levels of Logic = 1)
+Delay:               2.405ns (Levels of Logic = 1)
   Source:            M2_SevenSegsController/select_display_0 (FF)
-  Destination:       M2_SevenSegsController/select_display_2 (FF)
+  Destination:       M2_SevenSegsController/select_display_0 (FF)
   Source Clock:      M1_ClockDivider/DividedClock rising
   Destination Clock: M1_ClockDivider/DividedClock rising
 
-  Data Path: M2_SevenSegsController/select_display_0 to M2_SevenSegsController/select_display_2
+  Data Path: M2_SevenSegsController/select_display_0 to M2_SevenSegsController/select_display_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             20   0.447   1.197  M2_SevenSegsController/select_display_0 (M2_SevenSegsController/select_display_0)
-     LUT3:I1->O            3   0.203   0.650  M2_SevenSegsController/Mmux_ShowOneofSix611 (M2_SevenSegsController/Mmux_ShowOneofSix61)
-     FDR:R                     0.430          M2_SevenSegsController/select_display_0
+     FDC:C->Q             19   0.447   1.071  M2_SevenSegsController/select_display_0 (M2_SevenSegsController/select_display_0)
+     INV:I->O              1   0.206   0.579  M2_SevenSegsController/Mcount_select_display_xor<0>11_INV_0 (M2_SevenSegsController/Mcount_select_display)
+     FDC:D                     0.102          M2_SevenSegsController/select_display_0
     ----------------------------------------
-    Total                      2.928ns (1.080ns logic, 1.848ns route)
-                                       (36.9% logic, 63.1% route)
+    Total                      2.405ns (0.755ns logic, 1.650ns route)
+                                       (31.4% logic, 68.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Input_ClockDivider/DividedClock'
-  Clock period: 7.068ns (frequency: 141.487MHz)
-  Total number of paths / destination ports: 364 / 66
+  Clock period: 6.325ns (frequency: 158.108MHz)
+  Total number of paths / destination ports: 419 / 72
 -------------------------------------------------------------------------
-Delay:               3.534ns (Levels of Logic = 1)
-  Source:            Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_2 (FF)
-  Destination:       Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers5 (RAM)
-  Source Clock:      Input_ClockDivider/DividedClock rising
-  Destination Clock: Input_ClockDivider/DividedClock falling
+Delay:               3.162ns (Levels of Logic = 1)
+  Source:            Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1 (RAM)
+  Destination:       Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 (FF)
+  Source Clock:      Input_ClockDivider/DividedClock falling
+  Destination Clock: Input_ClockDivider/DividedClock rising
 
-  Data Path: Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_2 to Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers5
+  Data Path: Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1 to Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              21   0.447   1.458  Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_2 (Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_2)
-     LUT5:I0->O           20   0.203   1.092  Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/Mram_inst_rom121_1 (Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/Mram_inst_rom121)
-     RAM32M:ADDRD1             0.334          Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13
+     RAM32M:WCLK->DOB1   122   0.920   1.935  Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1 (Single_Cpu_real/alu_data_1<3>)
+     LUT3:I2->O            2   0.205   0.000  Single_Cpu_real/Stage_3/Mmux_pc_result261 (Single_Cpu_real/pc_result<3>)
+     FDC:D                     0.102          Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3
     ----------------------------------------
-    Total                      3.534ns (0.984ns logic, 2.550ns route)
-                                       (27.8% logic, 72.2% route)
+    Total                      3.162ns (1.227ns logic, 1.935ns route)
+                                       (38.8% logic, 61.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 68 / 68
+-------------------------------------------------------------------------
+Offset:              4.215ns (Levels of Logic = 2)
+  Source:            Reset (PAD)
+  Destination:       Input_ClockDivider/DividedClock (FF)
+  Destination Clock: CLK rising
+
+  Data Path: Reset to Input_ClockDivider/DividedClock
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            86   1.222   1.889  Reset_IBUF (Reset_IBUF)
+     LUT2:I0->O            1   0.203   0.579  Input_ClockDivider/_n0018_inv1 (Input_ClockDivider/_n0018_inv)
+     FDE:CE                    0.322          Input_ClockDivider/DividedClock
+    ----------------------------------------
+    Total                      4.215ns (1.747ns logic, 2.468ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'M1_ClockDivider/DividedClock'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              3.436ns (Levels of Logic = 1)
+  Source:            Reset (PAD)
+  Destination:       M2_SevenSegsController/select_display_2 (FF)
+  Destination Clock: M1_ClockDivider/DividedClock rising
+
+  Data Path: Reset to M2_SevenSegsController/select_display_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            86   1.222   1.784  Reset_IBUF (Reset_IBUF)
+     FDC:CLR                   0.430          M2_SevenSegsController/select_display_0
+    ----------------------------------------
+    Total                      3.436ns (1.652ns logic, 1.784ns route)
+                                       (48.1% logic, 51.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Input_ClockDivider/DividedClock'
+  Total number of paths / destination ports: 28 / 28
+-------------------------------------------------------------------------
+Offset:              4.836ns (Levels of Logic = 2)
+  Source:            Reset (PAD)
+  Destination:       Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62 (RAM)
+  Destination Clock: Input_ClockDivider/DividedClock falling
+
+  Data Path: Reset to Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            86   1.222   2.149  Reset_IBUF (Reset_IBUF)
+     LUT6:I0->O           14   0.203   0.957  Single_Cpu_real/Stage_2/Stage_2_Register/regwrite_register_w[4]_AND_7_o_01 (Single_Cpu_real/Stage_2/Stage_2_Register/regwrite_register_w[4]_AND_7_o_0)
+     RAM32M:WE                 0.304          Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers12
+    ----------------------------------------
+    Total                      4.836ns (1.729ns logic, 3.107ns route)
+                                       (35.8% logic, 64.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'M1_ClockDivider/DividedClock'
   Total number of paths / destination ports: 186 / 13
 -------------------------------------------------------------------------
-Offset:              7.363ns (Levels of Logic = 4)
+Offset:              7.341ns (Levels of Logic = 4)
   Source:            M2_SevenSegsController/select_display_0 (FF)
   Destination:       Segs<6> (PAD)
   Source Clock:      M1_ClockDivider/DividedClock rising
@@ -1195,14 +1261,14 @@ Offset:              7.363ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             20   0.447   1.457  M2_SevenSegsController/select_display_0 (M2_SevenSegsController/select_display_0)
+     FDC:C->Q             19   0.447   1.436  M2_SevenSegsController/select_display_0 (M2_SevenSegsController/select_display_0)
      LUT6:I0->O            1   0.203   0.580  M2_SevenSegsController/M1_SevenSegs/Mmux_A_G111 (M2_SevenSegsController/M1_SevenSegs/Mmux_A_G111)
      LUT5:I4->O            7   0.205   1.118  M2_SevenSegsController/M1_SevenSegs/Mmux_A_G112 (M2_SevenSegsController/M1_SevenSegs/Mmux_A_G11)
      LUT5:I0->O            1   0.203   0.579  M2_SevenSegsController/M1_SevenSegs/Mmux_A_G61 (Segs_1_OBUF)
      OBUF:I->O                 2.571          Segs_1_OBUF (Segs<1>)
     ----------------------------------------
-    Total                      7.363ns (3.629ns logic, 3.734ns route)
-                                       (49.3% logic, 50.7% route)
+    Total                      7.341ns (3.629ns logic, 3.712ns route)
+                                       (49.4% logic, 50.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Single_Cpu_real/Stage_3/Stage_3_Alu/_n0214'
@@ -1257,7 +1323,7 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    4.528|         |         |         |
+CLK            |    5.185|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Input_ClockDivider/DividedClock
@@ -1265,7 +1331,7 @@ Clock to Setup on destination clock Input_ClockDivider/DividedClock
                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
-Input_ClockDivider/DividedClock           |    3.378|    3.162|    3.534|         |
+Input_ClockDivider/DividedClock           |    3.271|    3.162|    3.115|         |
 Single_Cpu_real/Stage_3/Stage_3_Alu/_n0214|         |         |    1.451|         |
 ------------------------------------------+---------+---------+---------+---------+
 
@@ -1274,7 +1340,7 @@ Clock to Setup on destination clock M1_ClockDivider/DividedClock
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-M1_ClockDivider/DividedClock|    2.928|         |         |         |
+M1_ClockDivider/DividedClock|    2.405|         |         |         |
 ----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Single_Cpu_real/Stage_3/Stage_3_Alu/_n0214
@@ -1282,18 +1348,18 @@ Clock to Setup on destination clock Single_Cpu_real/Stage_3/Stage_3_Alu/_n0214
                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------+---------+---------+---------+---------+
-Input_ClockDivider/DividedClock|         |         |  126.771|         |
+Input_ClockDivider/DividedClock|         |         |  126.821|         |
 -------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 27.75 secs
+Total REAL time to Xst completion: 31.00 secs
+Total CPU time to Xst completion: 30.70 secs
  
 --> 
 
-Total memory usage is 4596160 kilobytes
+Total memory usage is 4627532 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  137 (   0 filtered)

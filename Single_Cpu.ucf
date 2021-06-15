@@ -22,3 +22,5 @@ NET Segs[3] LOC=N15; # 7-seg CD
 NET Segs[4] LOC=AB19; # 7-seg CE
 NET Segs[5] LOC=P20; # 7-seg CF
 NET Segs[6] LOC=Y21; # 7-seg CG
+
+NET Reset LOC=E6;
