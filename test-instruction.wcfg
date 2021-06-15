@@ -3,52 +3,40 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_board_tb_isim_beh.wdb" id="1" type="auto">
          <top_modules>
-            <top_module name="Single_Cpu_tb" />
+            <top_module name="Single_Cpu_board_tb" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="10" />
-   <wvobject fp_name="/Single_Cpu_tb/data_result" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">data_result[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data_result[31:0]</obj_property>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/Single_Cpu_board_tb/Segs" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Segs[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Segs[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/clock" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">clock</obj_property>
-      <obj_property name="ObjectShortName">clock</obj_property>
+   <wvobject fp_name="/Single_Cpu_board_tb/En" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">En[5:0]</obj_property>
+      <obj_property name="ObjectShortName">En[5:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/reset" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject fp_name="/Single_Cpu_board_tb/CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_1/pc" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">pc[31:0]</obj_property>
-      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+   <wvobject fp_name="/Single_Cpu_board_tb/Switch" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Switch[5:0]</obj_property>
+      <obj_property name="ObjectShortName">Switch[5:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_1/instruction" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
-      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   <wvobject fp_name="/Single_Cpu_board_tb/uut/M1_ClockDivider/DividedClock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DividedClock</obj_property>
+      <obj_property name="ObjectShortName">DividedClock</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_2/wb_data" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">wb_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">wb_data[31:0]</obj_property>
+   <wvobject fp_name="/Single_Cpu_board_tb/uut/M1_ClockDivider/clock_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">clock_count[32:0]</obj_property>
+      <obj_property name="ObjectShortName">clock_count[32:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_2/alu_data_1" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">alu_data_1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">alu_data_1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_2/alu_data_2" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">alu_data_2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">alu_data_2[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_4/memread" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">memread</obj_property>
-      <obj_property name="ObjectShortName">memread</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_4/memwrite" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">memwrite</obj_property>
-      <obj_property name="ObjectShortName">memwrite</obj_property>
+   <wvobject fp_name="/Single_Cpu_board_tb/uut/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">data[23:0]</obj_property>
    </wvobject>
 </wave_config>

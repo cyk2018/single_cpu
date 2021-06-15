@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Memory(
+    input                                               reset   ,
     input                                               clock   ,
     input           [31:0]                              address ,
     input           [31:0]                              mem_write_data  ,
@@ -31,17 +32,23 @@ module Memory(
     
     wire            [5:0]                               addr    ;
 
+    initial begin
+        $readmemh("memory.txt", mem);
+    end
+
     assign addr = address[7:2];
 
     always @(negedge clock) begin
-        if(memwrite && addr != 0)begin
+        if(reset)begin
+            $readmemh("memory.txt", mem);
+        end
+
+        else if(memwrite)begin
             mem[addr] <= mem_write_data;
         end    
     end
 
     assign mem_read_data = memread ? mem[addr] : 32'h0;
-
-
 
 
 endmodule

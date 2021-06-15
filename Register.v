@@ -33,32 +33,16 @@ module Register(
     reg             [31:0]                              registers   [31:0];
 
     initial begin
-        registers[0] = 32'h00000000;
-        registers[1] = 32'h00000001;
-        registers[2] = 32'h00000002;
-        registers[3] = 32'h00000003;
-        registers[4] = 32'h00000004;
-        registers[5] = 32'h00000005;
-        registers[6] = 32'h00000006;
-        registers[7] = 32'h00000007;
-        registers[8] = 32'h00000008;
+        $readmemh("registers.txt", registers);
     end
 
-    always @(negedge clock or posedge reset) begin
+    always @(negedge clock) begin
         // negetive edge write
-        if(regwrite)begin
-            registers[register_w] <= write_data;
-        end
         if(reset)begin
-            registers[0] <= 32'h00000000;
-            registers[1] <= 32'h00000001;
-            registers[2] <= 32'h00000002;
-            registers[3] <= 32'h00000003;
-            registers[4] <= 32'h00000004;
-            registers[5] <= 32'h00000005;
-            registers[6] <= 32'h00000006;
-            registers[7] <= 32'h00000007;
-            registers[8] <= 32'h00000008;
+            $readmemh("registers.txt", registers);
+        end
+        else if(regwrite & |register_w)begin // not write zero register
+            registers[register_w] = write_data;
         end
     end
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Single_Cpu_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/Single_Cpu_tb/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_2/regwrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">regwrite</obj_property>
+      <obj_property name="ObjectShortName">regwrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_1/pc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_1/instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_3/alu_data_1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">alu_data_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_data_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_tb/uut/Stage_3/alu_data_2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">alu_data_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_data_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_tb/data_result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_result[31:0]</obj_property>
+   </wvobject>
+</wave_config>

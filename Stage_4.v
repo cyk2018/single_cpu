@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Stage_4(
+    input                                               reset   ,
     input                                               clock   ,
     input           [31:0]                              reg_data_2  ,
     input                                               memread ,
@@ -28,6 +29,7 @@ module Stage_4(
     );
 
     Memory Stage_4_Memory(
+        .reset(reset),
         .clock(clock),
         .address(alu_result),
         .mem_write_data(reg_data_2),

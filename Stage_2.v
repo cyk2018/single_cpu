@@ -35,7 +35,8 @@ module Stage_2(
     output                                              branch  ,
     output                                              memread ,
     output                                              memwrite    ,
-    output                                              memtoreg    
+    output                                              memtoreg    ,
+    output                                              jr  
     );
     
     wire            [4:0]                              rw  ;
@@ -62,7 +63,6 @@ module Stage_2(
 
     Controller Stage_2_Controller
     (
-        .clock   (clock   ),
         .func    (func    ),
         .op      (op),
         .regdst  (regdst  ),
@@ -72,7 +72,8 @@ module Stage_2(
         .memtoreg(memtoreg),
         .alusrc  (alusrc  ),
         .regwrite(regwrite),
-        .expand  (expand)
+        .expand  (expand),
+        .jr(jr)
     );
 
     Expand Stage_2_Expand(

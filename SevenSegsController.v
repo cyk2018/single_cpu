@@ -29,6 +29,10 @@ module SevenSegsController(
 
     reg             [2:0]                               select_display  ; 
     wire            [3:0]                               four_digits ; 
+
+    initial begin
+        select_display = 3'b000;
+    end
  
     always @(posedge Clock or posedge Reset)
         if (Reset == 1'b1)

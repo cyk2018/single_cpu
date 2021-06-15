@@ -1,0 +1,22 @@
+Release 14.7 - par P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Tue Jun 15 12:30:21 2021
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 10 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers11_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers12_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers14_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers15_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers2_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers3_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4_RAMD_D1_O
+   Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers5_RAMD_D1_O
+
+

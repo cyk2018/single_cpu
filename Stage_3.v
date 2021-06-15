@@ -19,16 +19,19 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Stage_3(
+    input                                               jr  ,
     input                                               branch  ,
     input           [5:0]                               func    ,
     input           [5:0]                               op  ,
+    input           [4:0]                               sa  ,
+    input           [4:0]                               rs  ,
     input           [31:0]                              alu_data_1  ,
     input           [31:0]                              alu_data_2  ,
     input           [31:0]                              pc_4    ,
     input           [31:0]                              expand_imm  ,
     output                                              zero    ,
     output          [31:0]                              alu_result  ,
-    output          [31:0]                              pc_result   
+    output  reg     [31:0]                              pc_result   
     );
 
     wire            [31:0]                              branch_pc   ;
@@ -36,6 +39,8 @@ module Stage_3(
     Alu Stage_3_Alu(
         .func(func),
         .op(op),
+        .sa(sa),
+        .rs(rs),
         .alu_data_1(alu_data_1),
         .alu_data_2(alu_data_2),
         .zero(zero),
@@ -43,6 +48,17 @@ module Stage_3(
     );
 
     assign branch_pc = pc_4 + expand_imm << 2;
-    assign pc_result = (branch && zero) ? branch_pc : pc_4;
+    
+    always @(*) begin
+        if(branch & zero)begin
+            pc_result = branch_pc;
+        end
+        else if(jr) begin
+            pc_result = alu_data_1;
+        end
+        else begin
+            pc_result = pc_4;
+        end
+    end
 
 endmodule

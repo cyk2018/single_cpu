@@ -24,7 +24,7 @@ module ClockDivider(
     output  reg                                         DividedClock    
     ); 
 
-    parameter                                           COUNTER = 32'hC350; // 50 000 
+    parameter                                           COUNTER = 32'h5F5E100; 
     reg             [32:0]                              clock_count ;
     
     always @(posedge Clock or posedge Reset)
