@@ -37,7 +37,7 @@ Setup/Hold to clock CLK
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-Reset       |    6.310(R)|      SLOW  |   -2.319(R)|      FAST  |CLK_BUFGP         |   0.000|
+Reset       |    6.632(R)|      SLOW  |   -2.278(R)|      FAST  |CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -45,72 +45,72 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    4.614|         |         |         |
+CLK            |    3.229|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-Switch<0>      |En<0>          |   10.085|
-Switch<0>      |Segs<0>        |   12.882|
-Switch<0>      |Segs<1>        |   12.742|
-Switch<0>      |Segs<2>        |   12.413|
-Switch<0>      |Segs<3>        |   12.380|
-Switch<0>      |Segs<4>        |   12.909|
-Switch<0>      |Segs<5>        |   12.991|
-Switch<0>      |Segs<6>        |   12.512|
-Switch<1>      |En<1>          |    9.576|
-Switch<1>      |Segs<0>        |   13.031|
-Switch<1>      |Segs<1>        |   12.891|
-Switch<1>      |Segs<2>        |   12.562|
-Switch<1>      |Segs<3>        |   12.529|
-Switch<1>      |Segs<4>        |   13.058|
-Switch<1>      |Segs<5>        |   13.140|
-Switch<1>      |Segs<6>        |   12.661|
-Switch<2>      |En<2>          |    9.781|
-Switch<2>      |Segs<0>        |   12.848|
-Switch<2>      |Segs<1>        |   12.708|
-Switch<2>      |Segs<2>        |   12.379|
-Switch<2>      |Segs<3>        |   12.346|
-Switch<2>      |Segs<4>        |   12.875|
-Switch<2>      |Segs<5>        |   12.957|
-Switch<2>      |Segs<6>        |   12.478|
-Switch<3>      |En<3>          |   10.011|
-Switch<3>      |Segs<0>        |   13.384|
-Switch<3>      |Segs<1>        |   13.244|
-Switch<3>      |Segs<2>        |   12.915|
-Switch<3>      |Segs<3>        |   12.882|
-Switch<3>      |Segs<4>        |   13.411|
-Switch<3>      |Segs<5>        |   13.493|
-Switch<3>      |Segs<6>        |   13.014|
-Switch<4>      |En<4>          |    9.317|
-Switch<4>      |Segs<0>        |   11.479|
-Switch<4>      |Segs<1>        |   11.339|
-Switch<4>      |Segs<2>        |   11.010|
-Switch<4>      |Segs<3>        |   10.977|
-Switch<4>      |Segs<4>        |   11.506|
-Switch<4>      |Segs<5>        |   11.588|
-Switch<4>      |Segs<6>        |   11.109|
-Switch<5>      |En<5>          |    9.882|
-Switch<5>      |Segs<0>        |   11.982|
-Switch<5>      |Segs<1>        |   11.842|
-Switch<5>      |Segs<2>        |   11.513|
-Switch<5>      |Segs<3>        |   11.480|
-Switch<5>      |Segs<4>        |   12.009|
-Switch<5>      |Segs<5>        |   12.091|
-Switch<5>      |Segs<6>        |   11.612|
+Switch<0>      |En<0>          |   10.039|
+Switch<0>      |Segs<0>        |   11.953|
+Switch<0>      |Segs<1>        |   11.321|
+Switch<0>      |Segs<2>        |   11.254|
+Switch<0>      |Segs<3>        |   11.246|
+Switch<0>      |Segs<4>        |   11.841|
+Switch<0>      |Segs<5>        |   11.977|
+Switch<0>      |Segs<6>        |   11.311|
+Switch<1>      |En<1>          |   10.227|
+Switch<1>      |Segs<0>        |   11.960|
+Switch<1>      |Segs<1>        |   11.328|
+Switch<1>      |Segs<2>        |   11.261|
+Switch<1>      |Segs<3>        |   11.253|
+Switch<1>      |Segs<4>        |   11.848|
+Switch<1>      |Segs<5>        |   11.984|
+Switch<1>      |Segs<6>        |   11.318|
+Switch<2>      |En<2>          |    9.569|
+Switch<2>      |Segs<0>        |   11.909|
+Switch<2>      |Segs<1>        |   11.277|
+Switch<2>      |Segs<2>        |   11.210|
+Switch<2>      |Segs<3>        |   11.202|
+Switch<2>      |Segs<4>        |   11.797|
+Switch<2>      |Segs<5>        |   11.933|
+Switch<2>      |Segs<6>        |   11.267|
+Switch<3>      |En<3>          |    9.654|
+Switch<3>      |Segs<0>        |   11.992|
+Switch<3>      |Segs<1>        |   11.360|
+Switch<3>      |Segs<2>        |   11.293|
+Switch<3>      |Segs<3>        |   11.285|
+Switch<3>      |Segs<4>        |   11.880|
+Switch<3>      |Segs<5>        |   12.016|
+Switch<3>      |Segs<6>        |   11.350|
+Switch<4>      |En<4>          |    9.201|
+Switch<4>      |Segs<0>        |   11.557|
+Switch<4>      |Segs<1>        |   10.925|
+Switch<4>      |Segs<2>        |   10.858|
+Switch<4>      |Segs<3>        |   10.850|
+Switch<4>      |Segs<4>        |   11.445|
+Switch<4>      |Segs<5>        |   11.581|
+Switch<4>      |Segs<6>        |   10.915|
+Switch<5>      |En<5>          |    9.556|
+Switch<5>      |Segs<0>        |   11.571|
+Switch<5>      |Segs<1>        |   10.939|
+Switch<5>      |Segs<2>        |   10.872|
+Switch<5>      |Segs<3>        |   10.864|
+Switch<5>      |Segs<4>        |   11.459|
+Switch<5>      |Segs<5>        |   11.595|
+Switch<5>      |Segs<6>        |   10.929|
 ---------------+---------------+---------+
 
 
-Analysis completed Tue Jun 15 12:46:53 2021 
+Analysis completed Wed Jun 16 19:03:28 2021 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4705 MB
+Peak Memory Usage: 4644 MB
 
 
 

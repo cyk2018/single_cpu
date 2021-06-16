@@ -22,9 +22,8 @@
 #define alloca _alloca
 #endif
 static const char *ng0 = "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Pc.v";
-static unsigned int ng1[] = {4194340U, 0U};
-static unsigned int ng2[] = {262180U, 0U};
-static int ng3[] = {4, 0};
+static unsigned int ng1[] = {262180U, 0U};
+static int ng2[] = {4, 0};
 
 
 
@@ -100,7 +99,7 @@ LAB8:    goto LAB2;
 LAB6:    xsi_set_current_line(37, ng0);
 
 LAB9:    xsi_set_current_line(38, ng0);
-    t11 = ((char*)((ng2)));
+    t11 = ((char*)((ng1)));
     t12 = (t0 + 2088);
     xsi_vlogvar_assign_value(t12, t11, 0, 0, 32);
     goto LAB8;
@@ -130,7 +129,7 @@ LAB3:    goto *t2;
 LAB2:    xsi_set_current_line(45, ng0);
     t2 = (t0 + 1528U);
     t3 = *((char **)t2);
-    t2 = ((char*)((ng3)));
+    t2 = ((char*)((ng2)));
     memset(t4, 0, 8);
     xsi_vlog_unsigned_add(t4, 32, t3, 32, t2, 32);
     t5 = (t0 + 4184);

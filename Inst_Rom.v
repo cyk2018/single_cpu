@@ -23,12 +23,12 @@ module Inst_Rom(
     output          [31:0]                              instruction 
     );
 
-    reg             [63:0]                              inst_rom    [31:0]    ;
+    reg             [31:0]                              inst_rom    [63:0]    ;
 
     wire            [5:0]                               addr    ;
     wire            [31:0]                              address ;
 
-    assign address = pc - 32'h00400024;
+    assign address = pc - 32'h0040024;
     assign addr = address[7:2];
     
     initial begin

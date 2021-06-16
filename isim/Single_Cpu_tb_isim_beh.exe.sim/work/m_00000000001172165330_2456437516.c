@@ -22,7 +22,7 @@
 #define alloca _alloca
 #endif
 static const char *ng0 = "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Inst_Rom.v";
-static unsigned int ng1[] = {4194340U, 0U};
+static unsigned int ng1[] = {262180U, 0U};
 static const char *ng2 = "instruction.txt";
 
 
@@ -157,7 +157,7 @@ LAB1:    return;
 
 static void Cont_39_3(char *t0)
 {
-    char t5[16];
+    char t5[8];
     char *t1;
     char *t2;
     char *t3;
@@ -195,13 +195,13 @@ LAB2:    xsi_set_current_line(39, ng0);
     t11 = *((char **)t10);
     t12 = (t0 + 1368U);
     t13 = *((char **)t12);
-    xsi_vlog_generic_get_array_select_value(t5, 64, t4, t8, t11, 2, 1, t13, 6, 2);
+    xsi_vlog_generic_get_array_select_value(t5, 32, t4, t8, t11, 2, 1, t13, 6, 2);
     t12 = (t0 + 4152);
     t14 = (t12 + 56U);
     t15 = *((char **)t14);
     t16 = (t15 + 56U);
     t17 = *((char **)t16);
-    xsi_vlog_bit_copy(t17, 0, t5, 0, 32);
+    memcpy(t17, t5, 8);
     xsi_driver_vfirst_trans(t12, 0, 31);
     t18 = (t0 + 3944);
     *((int *)t18) = 1;

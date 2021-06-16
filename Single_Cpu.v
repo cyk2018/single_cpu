@@ -47,6 +47,11 @@ module Single_Cpu(
     wire            [31:0]                              alu_result  ;
     wire            [31:0]                              reg_data_2  ;
     wire            [31:0]                              mem_read_data   ;
+    wire            [1:0]                               mem_length  ;
+    wire                                                mem_signed  ;
+    wire                                                link ;
+    wire            [25:0]                              instr_index ;
+    wire                                                j   ;
 
     assign func = instruction[31:26];
     assign op = instruction[5:0];
@@ -55,6 +60,7 @@ module Single_Cpu(
     assign rt = instruction[20:16];
     assign rd = instruction[15:11];
     assign imm = instruction[15:0];
+    assign instr_index = instruction[25:0];
 
     Stage_1 Stage_1(
       .clock(clock),
@@ -83,16 +89,25 @@ module Single_Cpu(
         .memread(memread),
         .memwrite(memwrite),
         .memtoreg(memtoreg),
-        .jr(jr)
+        .jr(jr),
+        .mem_signed(mem_signed),
+        .mem_length(mem_length),
+        .link(link),
+        .j(j)
     );
 
     Stage_3 Stage_3(
+      .j(j),
+      .link(link),
       .jr(jr),
       .branch(branch),
       .func(func),
       .op(op),
       .sa(sa),
       .rs(rs),
+      .rt(rt),
+      .instr_index(instr_index),
+      .imm(imm),
       .alu_data_1(alu_data_1),
       .alu_data_2(alu_data_2),
       .pc_4(pc_4),
@@ -103,6 +118,8 @@ module Single_Cpu(
     );
 
     Stage_4 Stage_4(
+      .mem_signed(mem_signed),
+      .mem_length(mem_length),
       .reset(reset),
       .clock(clock),
       .reg_data_2(reg_data_2),

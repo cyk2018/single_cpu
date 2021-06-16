@@ -47,10 +47,6 @@ module Single_Cpu_tb;
 		#100;
         reset = 0;
 		// Add stimulus here
-		#1000;
-		reset = 1;
-
-		#100; reset = 0;
 	end
     always begin
 		#50; clock = ~clock;

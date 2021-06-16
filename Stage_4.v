@@ -19,6 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Stage_4(
+    input           [1:0]                               mem_length  ,
+    input                                               mem_signed  ,
     input                                               reset   ,
     input                                               clock   ,
     input           [31:0]                              reg_data_2  ,
@@ -29,6 +31,8 @@ module Stage_4(
     );
 
     Memory Stage_4_Memory(
+        .mem_length(mem_length),
+        .mem_signed(mem_signed),
         .reset(reset),
         .clock(clock),
         .address(alu_result),

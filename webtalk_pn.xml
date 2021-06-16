@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Tue Jun 15 12:46:17 2021">
+<application name="pn" timeStamp="Wed Jun 16 19:02:42 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="F7C785AC277F416584F20CB529FA2B89" type="project"/>
-<property name="ProjectIteration" value="18" type="project"/>
+<property name="ProjectIteration" value="21" type="project"/>
 <property name="ProjectFile" value="C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/single_cpu.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2021-06-13T01:54:11" type="project"/>
 </section>
@@ -27,7 +27,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_UserEditorPreference" value="Custom" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2021-06-13T01:54:11" type="design"/>
 <property name="PROP_intWbtProjectID" value="F7C785AC277F416584F20CB529FA2B89" type="design"/>
-<property name="PROP_intWbtProjectIteration" value="18" type="process"/>
+<property name="PROP_intWbtProjectIteration" value="21" type="process"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_lockPinsUcfFile" value="changed" type="process"/>

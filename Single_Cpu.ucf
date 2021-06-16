@@ -24,3 +24,5 @@ NET Segs[5] LOC=P20; # 7-seg CF
 NET Segs[6] LOC=Y21; # 7-seg CG
 
 NET Reset LOC=E6;
+
+NET Reset CLOCK_DEDICATED_ROUTE = FALSE;

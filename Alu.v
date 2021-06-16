@@ -23,9 +23,11 @@ module Alu(
     input           [5:0]                               op  ,
     input           [4:0]                               sa  ,
     input           [4:0]                               rs  ,
+    input           [4:0]                               rt  ,
+    input           [15:0]                              imm ,
     input           [31:0]                              alu_data_1  ,
     input           [31:0]                              alu_data_2  ,
-    output                                              zero    ,
+    output  reg                                         zero    ,
     output  reg     [31:0]                              alu_result  
     );
 
@@ -38,6 +40,8 @@ module Alu(
     always @(*) begin
         long_operand = 0;
         overflow = 0;
+        zero = 0;
+        alu_result = 32'h0;
         case (func)
         6'b000000:
             case (op)
@@ -192,10 +196,125 @@ module Alu(
                 end
                 default: alu_result = 32'h0;
             endcase 
+        6'b001111:begin
+            // lui
+            alu_result = {imm, 16'h0};
+        end
+        6'b001100:begin
+            // andi
+            alu_result = alu_data_1 & alu_data_2;
+        end
+        6'b001101:begin
+            // ori
+            alu_result = alu_data_1 | alu_data_2;
+        end
+        6'b001110:begin
+            // xori
+            alu_result = alu_data_1 ^ alu_data_2;
+        end
+        6'b100000:begin
+            // lb
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b100100:begin
+            // lbu
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b101000:begin
+            // sb
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b100001:begin
+            // lh
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b100101:begin
+            // lhu
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b101001:begin
+            // sh
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b100011:begin
+            // lw
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b101011:begin
+            // sw
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b001000:begin
+            // addi
+            ex_operand_1 = {alu_data_1[31], alu_data_1[31:0]};
+            ex_operand_2 = {alu_data_2[31], alu_data_2[31:0]};
+            ex_result = ex_operand_1 + ex_operand_2;
+            // <= can not used in control statement
+            if(ex_result[32] != ex_result[31])begin
+                // overflow
+                alu_result = 32'h0;
+                overflow = 1;
+            end
+            else begin
+                alu_result = ex_result[31:0];
+            end
+        end
+        6'b001001:begin
+            // addiu
+            alu_result = alu_data_1 + alu_data_2;
+        end
+        6'b001010:begin
+            // slti
+            alu_result = ($signed(alu_data_1) < $signed(alu_data_2)) ? 32'h1 : 32'h0;
+        end
+        6'b001011:begin
+            // sltiu
+            alu_result = (alu_data_1 < alu_data_2) ? 32'h1 : 32'h0;
+        end
+        6'b000100:begin
+            // b beq
+            alu_result = alu_data_1 - alu_data_2;
+            zero = ~|alu_result;
+        end
+        6'b000001:begin
+            if(rt == 5'b00001)begin
+                // bgez
+                if(~alu_data_1[31])begin
+                    zero = 1;
+                end
+            end
+            else if(rt == 5'b00000)begin
+                if(alu_data_1[31])begin
+                    // bltz
+                    zero = 1;
+                end
+            end
+
+            else begin // rt == 5'b10001
+                // bal bgezal
+                zero = 1;
+            end
+            
+        end
+        6'b000111:begin
+            // bgtz
+            if(~alu_data_1[31] & |alu_data_1)begin
+                zero = 1;
+            end
+        end
+        6'b000110:begin
+            // blez
+            if(alu_data_1[31] | ~|alu_data_1)begin
+                zero = 1;
+            end
+        end
+        6'b000101:begin
+            // bne
+            alu_result = alu_data_1 - alu_data_2;
+            zero = |alu_result;
+        end
         default: alu_result = 32'h0;
         endcase    
     end
-    
-    assign zero = ~|alu_result;
     
 endmodule

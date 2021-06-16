@@ -19,36 +19,71 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Memory(
+    input           [1:0]                               mem_length  ,
+    input                                               mem_signed  ,
     input                                               reset   ,
     input                                               clock   ,
     input           [31:0]                              address ,
     input           [31:0]                              mem_write_data  ,
     input                                               memread ,
     input                                               memwrite    ,
-    output          [31:0]                              mem_read_data   
+    output  reg     [31:0]                              mem_read_data   
     );
 
-    reg             [63:0]                              mem [31:0];
+    reg             [7:0]                              mem [63:0];
+    reg             [7:0]                               mem_unit    ;
     
     wire            [5:0]                               addr    ;
 
     initial begin
-        $readmemh("memory.txt", mem);
+        $readmemb("memory.txt", mem);
     end
 
-    assign addr = address[7:2];
+    assign addr = address[5:0];
 
     always @(negedge clock) begin
         if(reset)begin
-            $readmemh("memory.txt", mem);
+            $readmemb("memory.txt", mem);
         end
 
         else if(memwrite)begin
-            mem[addr] <= mem_write_data;
+            case (mem_length)
+                2'b01: begin
+                    // sb
+                    mem[addr] = mem_write_data[7:0];
+                end
+                2'b10:begin
+                    // sh
+                    mem[addr] = mem_write_data[15:8];
+                    mem[addr + 1] = mem_write_data[7:0];
+                end
+                2'b11:begin
+                    // sw
+                    mem[addr] = mem_write_data[31:24];
+                    mem[addr + 1] = mem_write_data[23:15];
+                    mem[addr + 2] = mem_write_data[15:8];
+                    mem[addr + 3] = mem_write_data[7:0];
+                end
+            endcase
         end    
     end
 
-    assign mem_read_data = memread ? mem[addr] : 32'h0;
+    always @(*) begin
+        if(memread)begin
+            mem_unit = mem[addr];
+            case (mem_length)
+                2'b01: begin
+                    mem_read_data =  mem_signed ? {{24{mem_unit[7]}}, mem_unit} : {24'b0, mem_unit};
+                end
+                2'b10:begin
+                    mem_read_data = mem_signed ? {{16{mem_unit[7]}}, mem_unit, mem[addr + 1]} : {16'b0, mem_unit, mem[addr + 1]};
+                end
+                2'b11:begin
+                    mem_read_data = {mem[addr], mem[addr + 1], mem[addr + 2], mem[addr + 3]};
+                end
+            endcase    
+        end
+    end
 
 
 endmodule

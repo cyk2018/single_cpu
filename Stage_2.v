@@ -36,7 +36,11 @@ module Stage_2(
     output                                              memread ,
     output                                              memwrite    ,
     output                                              memtoreg    ,
-    output                                              jr  
+    output                                              jr  ,
+    output                                              mem_signed  ,
+    output          [1:0]                               mem_length  ,
+    output                                              link ,
+    output                                              j   
     );
     
     wire            [4:0]                              rw  ;
@@ -46,8 +50,7 @@ module Stage_2(
     wire                                                expand  ;
     wire            [31:0]                              reg_data_1  ;
 
-
-    assign rw = regdst ? rd : rt;
+    assign rw = regdst ? rd : (link ? 31 : rt);
 
     Register Stage_2_Register(
         .clock       (clock),
@@ -63,6 +66,8 @@ module Stage_2(
 
     Controller Stage_2_Controller
     (
+        .rd(rd),
+        .rt(rt),
         .func    (func    ),
         .op      (op),
         .regdst  (regdst  ),
@@ -73,7 +78,11 @@ module Stage_2(
         .alusrc  (alusrc  ),
         .regwrite(regwrite),
         .expand  (expand),
-        .jr(jr)
+        .jr(jr),
+        .mem_signed(mem_signed),
+        .mem_length(mem_length),
+        .link(link),
+        .j(j)
     );
 
     Expand Stage_2_Expand(

@@ -19,12 +19,17 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Stage_3(
+    input                                               j   ,
+    input                                               link ,
     input                                               jr  ,
     input                                               branch  ,
     input           [5:0]                               func    ,
     input           [5:0]                               op  ,
     input           [4:0]                               sa  ,
     input           [4:0]                               rs  ,
+    input           [4:0]                               rt  ,
+    input           [25:0]                              instr_index ,
+    input           [15:0]                              imm ,
     input           [31:0]                              alu_data_1  ,
     input           [31:0]                              alu_data_2  ,
     input           [31:0]                              pc_4    ,
@@ -35,19 +40,27 @@ module Stage_3(
     );
 
     wire            [31:0]                              branch_pc   ;
+    wire            [31:0]                              result  ;
+    wire            [31:0]                              jpc ;
 
     Alu Stage_3_Alu(
         .func(func),
         .op(op),
         .sa(sa),
         .rs(rs),
+        .rt(rt),
+        .imm(imm),
         .alu_data_1(alu_data_1),
         .alu_data_2(alu_data_2),
         .zero(zero),
-        .alu_result(alu_result)
+        .alu_result(result)
     );
 
-    assign branch_pc = pc_4 + expand_imm << 2;
+    assign alu_result = link ? pc_4 : result;
+
+    assign branch_pc = pc_4 + (expand_imm << 2);
+
+    assign jpc = {pc_4[31:28], instr_index, 2'b0};
     
     always @(*) begin
         if(branch & zero)begin
@@ -55,6 +68,9 @@ module Stage_3(
         end
         else if(jr) begin
             pc_result = alu_data_1;
+        end
+        else if(j) begin
+            pc_result = jpc;
         end
         else begin
             pc_result = pc_4;

@@ -29,7 +29,7 @@ module Pc(
     reg             [31:0]                              new_pc  ;
 
     initial begin
-        new_pc = 32'h00400024;
+        new_pc = 32'h0040024;
         //qtspim start from 0040024
     end
 
