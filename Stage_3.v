@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Stage_3(
+    input                                               sc  ,
     input                                               j   ,
     input                                               link ,
     input                                               jr  ,
@@ -42,6 +43,9 @@ module Stage_3(
     wire            [31:0]                              branch_pc   ;
     wire            [31:0]                              result  ;
     wire            [31:0]                              jpc ;
+    wire            [31:0]                              cpdata  ;
+    wire                                                eret    ;
+    wire            [31:0]                              w_cpdata    ;
 
     Alu Stage_3_Alu(
         .func(func),
@@ -52,8 +56,19 @@ module Stage_3(
         .imm(imm),
         .alu_data_1(alu_data_1),
         .alu_data_2(alu_data_2),
+        .cpdata(cpdata),
+        .w_cpdata(w_cpdata),
         .zero(zero),
         .alu_result(result)
+    );
+
+    CoProcessor CP0(
+        .sc(sc),
+        .op(op),
+        .rs(rs),
+        .w_data(w_cpdata),
+        .eret(eret),
+        .data(cpdata)
     );
 
     assign alu_result = link ? pc_4 : result;
@@ -71,6 +86,9 @@ module Stage_3(
         end
         else if(j) begin
             pc_result = jpc;
+        end
+        else if(eret)begin
+            pc_result = cpdata;
         end
         else begin
             pc_result = pc_4;

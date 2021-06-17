@@ -52,6 +52,7 @@ module Single_Cpu(
     wire                                                link ;
     wire            [25:0]                              instr_index ;
     wire                                                j   ;
+    wire                                                sc  ;
 
     assign func = instruction[31:26];
     assign op = instruction[5:0];
@@ -61,6 +62,7 @@ module Single_Cpu(
     assign rd = instruction[15:11];
     assign imm = instruction[15:0];
     assign instr_index = instruction[25:0];
+    assign sc = instruction[5];
 
     Stage_1 Stage_1(
       .clock(clock),
@@ -97,6 +99,7 @@ module Single_Cpu(
     );
 
     Stage_3 Stage_3(
+      .sc(sc),
       .j(j),
       .link(link),
       .jr(jr),

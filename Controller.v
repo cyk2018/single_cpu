@@ -158,6 +158,14 @@ module Controller(
                         regwrite = 0;
                         link = 1;
                     end
+                    6'b001101:begin
+                        // break
+                        regwrite = 0;
+                    end
+                    6'b001100:begin
+                        // syscall
+                        regwrite = 0;
+                    end
                 endcase
             end
             6'b001111:begin
@@ -322,6 +330,14 @@ module Controller(
                 j = 1;
                 regdst = 0;
                 link = 1;
+            end
+            6'b011111:begin
+                // ext
+                regdst = 0;
+            end
+            6'b010000:begin
+                // di
+                regdst = 0;
             end
         endcase
 

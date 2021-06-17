@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Alu(
+    input           [31:0]                              cpdata  ,
     input           [5:0]                               func    ,
     input           [5:0]                               op  ,
     input           [4:0]                               sa  ,
@@ -28,7 +29,8 @@ module Alu(
     input           [31:0]                              alu_data_1  ,
     input           [31:0]                              alu_data_2  ,
     output  reg                                         zero    ,
-    output  reg     [31:0]                              alu_result  
+    output  reg     [31:0]                              alu_result  ,
+    output  reg     [31:0]                              w_cpdata    
     );
 
     reg             [63:0]                              long_operand    ;
@@ -36,12 +38,14 @@ module Alu(
     reg             [32:0]                              ex_operand_2   ;
     reg             [32:0]                              ex_result   ;
     reg                                                overflow    ;
+    reg                                                 syscall ;
 
     always @(*) begin
         long_operand = 0;
         overflow = 0;
         zero = 0;
         alu_result = 32'h0;
+        syscall = 0;
         case (func)
         6'b000000:
             case (op)
@@ -194,6 +198,14 @@ module Alu(
                     // jr
 
                 end
+                6'b001101:begin
+                    // break
+                    break = 1;
+                end
+                6'b001100:begin
+                    // syscall
+                    syscall = 1;
+                end
                 default: alu_result = 32'h0;
             endcase 
         6'b001111:begin
@@ -312,6 +324,24 @@ module Alu(
             // bne
             alu_result = alu_data_1 - alu_data_2;
             zero = |alu_result;
+        end
+        6'b011111:begin
+            if(~|op)begin
+                // ext
+                alu_result = {alu_data_2[31:rd + 1], alu_data_1[rd + sa:sa]};
+            end
+            else begin
+                // ins
+                alu_result = {alu_data_2[31:rd + 1], alu_data_1[rd - sa:0], alu_data_2[sa - 1:0]};
+            end
+        end
+        6'b010000:begin
+            // di ei mfc0
+            alu_result = cpdata;
+            if(rs == 5'b00100)begin
+                // mtc0
+                w_cpdata = alu_data_2;
+            end
         end
         default: alu_result = 32'h0;
         endcase    
