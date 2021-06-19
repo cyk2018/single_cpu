@@ -1,4 +1,4 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_isim_beh.exe" -prj "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_beh.prj" "work.Single_Cpu_tb" "work.glbl" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_fib_tb_isim_beh.exe" -prj "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_fib_tb_beh.prj" "work.Single_Cpu_fib_tb" "work.glbl" 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
@@ -17,7 +17,7 @@ Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_2.v" into library work
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_1.v" into library work
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu.v" into library work
-Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_fib_tb.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
@@ -35,11 +35,11 @@ Compiling module Memory
 Compiling module Stage_4
 Compiling module Stage_5
 Compiling module Single_Cpu
-Compiling module Single_Cpu_tb
+Compiling module Single_Cpu_fib_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 16 Verilog Units
-Built simulation executable C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_isim_beh.exe
-Fuse Memory Usage: 29552 KB
-Fuse CPU Usage: 718 ms
+Built simulation executable C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_fib_tb_isim_beh.exe
+Fuse Memory Usage: 28808 KB
+Fuse CPU Usage: 546 ms

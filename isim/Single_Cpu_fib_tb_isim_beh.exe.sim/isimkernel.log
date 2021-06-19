@@ -1,0 +1,28 @@
+Command line:
+   Single_Cpu_fib_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  63991
+
+Sat Jun 19 19:34:53 2021
+
+
+ Elaboration Time: 0.09375 sec
+
+ Current Memory Usage: 5157.79 Meg
+
+ Total Signals          : 179
+ Total Nets             : 764
+ Total Signal Drivers   : 55
+ Total Blocks           : 16
+ Total Primitive Blocks : 10
+ Total Processes        : 72
+ Total Traceable Variables  : 56
+ Total Scalar Nets and Variables : 5067
+
+ Total Simulation Time: 1 sec
+
+ Current Memory Usage: 4685.93 Meg
+
+Sat Jun 19 20:12:46 2021
+

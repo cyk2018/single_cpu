@@ -35,6 +35,8 @@ module Inst_Rom(
        $readmemh("instruction.txt", inst_rom); 
     end
 
+    // how do we print use syscall?
+    // store values which you want to output at specific field
 
     assign instruction = inst_rom[addr];
 endmodule

@@ -48,7 +48,8 @@ module Single_Cpu_board(
     Single_Cpu Single_Cpu_real(
         .clock(ClockInput),
         .reset(Reset),
-        .data_result(data)
+        //.data_result(data),
+        .print_data(data)
     );
 
 endmodule

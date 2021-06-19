@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_fib_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Single_Cpu_fib_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/Single_Cpu_fib_tb/print_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">print_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">print_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_2/Stage_2_Register/registers" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">registers[31:0,31:0]</obj_property>
+      <obj_property name="ObjectShortName">registers[31:0,31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_1/Stage_1_Pc/pc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_1/Stage_1_Inst_Rom/instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_3/Stage_3_Alu/alu_data_1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">alu_data_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_data_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_3/Stage_3_Alu/alu_data_2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">alu_data_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_data_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/data_result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_2/Stage_2_Controller/regwrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">regwrite</obj_property>
+      <obj_property name="ObjectShortName">regwrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_2/Stage_2_Register/register_w" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">register_w[4:0]</obj_property>
+      <obj_property name="ObjectShortName">register_w[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_2/Stage_2_Register/write_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">write_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_Cpu_fib_tb/uut/Stage_4/Stage_4_Memory/mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem[63:0,7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[63:0,7:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -19,6 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module CoProcessor(
+    input                                               syscall ,
+    input           [31:0]                              return_pc   ,
     input                                               clock   ,
     input                                               sc  ,
     input           [5:0]                               func,
@@ -63,7 +65,10 @@ module CoProcessor(
     end
 // **************************************************
     always @(negedge clock) begin
-        if(func == 6'b010000)begin
+        if(syscall)begin
+            EPC = return_pc;
+        end
+        else if(func == 6'b010000)begin
             if(rs == 5'b00100)begin
                 // mtc0
                 registers[0] = w_data;

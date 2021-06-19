@@ -48,6 +48,7 @@ module Stage_3(
     wire            [31:0]                              cpdata  ;
     wire                                                eret    ;
     wire            [31:0]                              w_cpdata    ;
+    wire                                                syscall ;
 
     Alu Stage_3_Alu(
         .func(func),
@@ -62,10 +63,13 @@ module Stage_3(
         .cpdata(cpdata),
         .w_cpdata(w_cpdata),
         .zero(zero),
-        .alu_result(result)
+        .alu_result(result),
+        .syscall(syscall)
     );
 
     CoProcessor CP0(
+        .syscall(syscall),
+        .return_pc(pc_4),
         .func(func),
         .clock(clock),
         .sc(sc),
@@ -94,6 +98,11 @@ module Stage_3(
         end
         else if(eret)begin
             pc_result = cpdata;
+        end
+        else if(syscall)begin
+            // jump to kernel code
+            pc_result = 32'h00400EC;
+            // write return_address to EPC
         end
         else begin
             pc_result = pc_4;

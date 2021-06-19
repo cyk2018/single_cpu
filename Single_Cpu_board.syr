@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 1.35 secs
+Total CPU time to Xst completion: 1.44 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 1.35 secs
+Total CPU time to Xst completion: 1.44 secs
  
 --> Reading design: Single_Cpu_board.prj
 
@@ -147,6 +147,7 @@ Parsing module <Single_Cpu_board>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
+WARNING:HDLCompiler:1016 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu_board.v" Line 48: Port data_result is not connected to this instance
 
 Elaborating module <Single_Cpu_board>.
 
@@ -187,21 +188,21 @@ Elaborating module <Alu>.
 WARNING:HDLCompiler:1127 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Alu.v" Line 47: Assignment to overflow ignored, since the identifier is never used
 
 Elaborating module <CoProcessor>.
-WARNING:HDLCompiler:872 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\CoProcessor.v" Line 44: Using initial value of ErrorEPC since it is never assigned
-WARNING:HDLCompiler:413 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\CoProcessor.v" Line 42: Result of 32-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:634 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\CoProcessor.v" Line 32: Net <Status[31]> does not have a driver.
-WARNING:HDLCompiler:1127 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu.v" Line 120: Assignment to zero ignored, since the identifier is never used
+WARNING:HDLCompiler:872 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\CoProcessor.v" Line 46: Using initial value of ErrorEPC since it is never assigned
+WARNING:HDLCompiler:413 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\CoProcessor.v" Line 44: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:634 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\CoProcessor.v" Line 34: Net <Status[31]> does not have a driver.
+WARNING:HDLCompiler:1127 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu.v" Line 121: Assignment to zero ignored, since the identifier is never used
 
 Elaborating module <Stage_4>.
 
 Elaborating module <Memory>.
 Reading initialization file \"memory.txt\".
-WARNING:HDLCompiler:1670 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v" Line 39: Signal <mem> in initial block is partially initialized.
-WARNING:HDLCompiler:817 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v" Line 46: System task readmemb ignored for synthesis
-WARNING:HDLCompiler:413 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v" Line 63: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:1670 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v" Line 40: Signal <mem> in initial block is partially initialized.
+WARNING:HDLCompiler:817 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v" Line 47: System task readmemb ignored for synthesis
+WARNING:HDLCompiler:413 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v" Line 64: Result of 9-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <Stage_5>.
-WARNING:HDLCompiler:189 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu_board.v" Line 51: Size mismatch in connection of port <data_result>. Formal port size is 32-bit while actual signal size is 24-bit.
+WARNING:HDLCompiler:189 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu_board.v" Line 52: Size mismatch in connection of port <print_data>. Formal port size is 32-bit while actual signal size is 24-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -209,6 +210,7 @@ WARNING:HDLCompiler:189 - "C:\Users\29593\Documents\cyk\computer-system\single_c
 
 Synthesizing Unit <Single_Cpu_board>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu_board.v".
+INFO:Xst:3210 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu_board.v" line 48: Output port <data_result> of the instance <Single_Cpu_real> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <Single_Cpu_board> synthesized.
@@ -257,7 +259,7 @@ Unit <SevenSegs> synthesized.
 
 Synthesizing Unit <Single_Cpu>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu.v".
-INFO:Xst:3210 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu.v" line 101: Output port <zero> of the instance <Stage_3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Single_Cpu.v" line 102: Output port <zero> of the instance <Stage_3> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <Single_Cpu> synthesized.
@@ -317,26 +319,26 @@ Unit <Expand> synthesized.
 Synthesizing Unit <Stage_3>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Stage_3.v".
 WARNING:Xst:647 - Input <expand_imm<31:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 32-bit adder for signal <branch_pc> created at line 81.
+    Found 32-bit adder for signal <branch_pc> created at line 85.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   5 Multiplexer(s).
+	inferred   6 Multiplexer(s).
 Unit <Stage_3> synthesized.
 
 Synthesizing Unit <Alu>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Alu.v".
     Found 33-bit subtractor for signal <alu_data_1[31]_alu_data_2[31]_sub_36_OUT> created at line 180.
-    Found 32-bit subtractor for signal <alu_data_1[31]_alu_data_2[31]_sub_93_OUT> created at line 293.
-    Found 7-bit subtractor for signal <GND_16_o_GND_16_o_sub_103_OUT> created at line 337.
-    Found 7-bit subtractor for signal <GND_16_o_GND_16_o_sub_105_OUT> created at line 337.
-    Found 7-bit subtractor for signal <GND_16_o_GND_16_o_sub_112_OUT> created at line 343.
-    Found 32-bit subtractor for signal <GND_16_o_GND_16_o_sub_114_OUT> created at line 343.
-    Found 32-bit subtractor for signal <GND_16_o_GND_16_o_sub_117_OUT> created at line 343.
+    Found 32-bit subtractor for signal <alu_data_1[31]_alu_data_2[31]_sub_93_OUT> created at line 295.
+    Found 7-bit subtractor for signal <GND_16_o_GND_16_o_sub_103_OUT> created at line 339.
+    Found 7-bit subtractor for signal <GND_16_o_GND_16_o_sub_105_OUT> created at line 339.
+    Found 7-bit subtractor for signal <GND_16_o_GND_16_o_sub_112_OUT> created at line 345.
+    Found 32-bit subtractor for signal <GND_16_o_GND_16_o_sub_114_OUT> created at line 345.
+    Found 32-bit subtractor for signal <GND_16_o_GND_16_o_sub_117_OUT> created at line 345.
     Found 33-bit adder for signal <alu_data_1[31]_alu_data_2[31]_add_17_OUT> created at line 119.
     Found 32-bit adder for signal <alu_data_1[31]_alu_data_2[31]_add_20_OUT> created at line 132.
-    Found 6-bit adder for signal <n0296[5:0]> created at line 337.
-    Found 6-bit adder for signal <n0278> created at line 338.
-    Found 32-bit adder for signal <GND_16_o_GND_16_o_add_112_OUT> created at line 343.
+    Found 6-bit adder for signal <n0297[5:0]> created at line 339.
+    Found 6-bit adder for signal <n0279> created at line 340.
+    Found 32-bit adder for signal <GND_16_o_GND_16_o_add_112_OUT> created at line 345.
     Found 32-bit shifter logical left for signal <alu_data_2[31]_sa[4]_shift_left_1_OUT> created at line 65
     Found 64-bit shifter logical right for signal <alu_data_2[31]_sa[4]_shift_right_5_OUT> created at line 77
     Found 64-bit shifter logical right for signal <alu_data_2[31]_alu_data_1[4]_shift_right_9_OUT> created at line 89
@@ -345,16 +347,16 @@ Synthesizing Unit <Alu>.
     Found 32-bit shifter arithmetic right for signal <alu_data_2[31]_alu_data_1[4]_shift_right_15_OUT> created at line 109
     Found 32x32-bit multiplier for signal <alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT> created at line 155.
     Found 32x32-bit multiplier for signal <alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT> created at line 166.
-    Found 32-bit shifter logical left for signal <alu_data_1[31]_GND_16_o_shift_left_103_OUT> created at line 337
-    Found 32-bit shifter logical right for signal <alu_data_1[31]_GND_16_o_shift_right_105_OUT> created at line 337
-    Found 32-bit shifter logical right for signal <alu_data_2[31]_BUS_0014_shift_right_107_OUT> created at line 338
-    Found 32-bit shifter logical left for signal <alu_data_2[31]_BUS_0015_shift_left_109_OUT> created at line 338
-    Found 32-bit shifter logical left for signal <alu_data_1[31]_GND_16_o_shift_left_114_OUT> created at line 343
-    Found 32-bit shifter logical right for signal <alu_data_1[31]_GND_16_o_shift_right_117_OUT> created at line 343
-    Found 32-bit shifter logical right for signal <PWR_16_o_sa[4]_shift_right_118_OUT> created at line 344
-    Found 32-bit shifter logical left for signal <PWR_16_o_GND_16_o_shift_left_122_OUT> created at line 344
-    Found 32-bit shifter logical right for signal <PWR_16_o_GND_16_o_shift_right_125_OUT> created at line 344
-    Found 1-bit 7-to-1 multiplexer for signal <_n0313> created at line 32.
+    Found 32-bit shifter logical left for signal <alu_data_1[31]_GND_16_o_shift_left_103_OUT> created at line 339
+    Found 32-bit shifter logical right for signal <alu_data_1[31]_GND_16_o_shift_right_105_OUT> created at line 339
+    Found 32-bit shifter logical right for signal <alu_data_2[31]_BUS_0014_shift_right_107_OUT> created at line 340
+    Found 32-bit shifter logical left for signal <alu_data_2[31]_BUS_0015_shift_left_109_OUT> created at line 340
+    Found 32-bit shifter logical left for signal <alu_data_1[31]_GND_16_o_shift_left_114_OUT> created at line 345
+    Found 32-bit shifter logical right for signal <alu_data_1[31]_GND_16_o_shift_right_117_OUT> created at line 345
+    Found 32-bit shifter logical right for signal <PWR_16_o_sa[4]_shift_right_118_OUT> created at line 346
+    Found 32-bit shifter logical left for signal <PWR_16_o_GND_16_o_shift_left_122_OUT> created at line 346
+    Found 32-bit shifter logical right for signal <PWR_16_o_GND_16_o_shift_right_125_OUT> created at line 346
+    Found 1-bit 7-to-1 multiplexer for signal <_n0314> created at line 32.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_cpdata<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_cpdata<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_cpdata<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -396,7 +398,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <w_cpdata<31>>. Latches may be ge
 	inferred  12 Adder/Subtractor(s).
 	inferred  32 Latch(s).
 	inferred   4 Comparator(s).
-	inferred  23 Multiplexer(s).
+	inferred  24 Multiplexer(s).
 	inferred  15 Combinational logic shifter(s).
 Unit <Alu> synthesized.
 
@@ -616,6 +618,7 @@ Synthesizing Unit <CoProcessor>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\CoProcessor.v".
 WARNING:Xst:2935 - Signal 'Status<31:3>', unconnected in block 'CoProcessor', is tied to its initial value (00000000000000000000000000000).
     Found 1-bit register for signal <Status<1>>.
+    Found 32-bit register for signal <EPC>.
     Found 1-bit register for signal <registers<0><31>>.
     Found 1-bit register for signal <registers<0><30>>.
     Found 1-bit register for signal <registers<0><29>>.
@@ -651,8 +654,8 @@ WARNING:Xst:2935 - Signal 'Status<31:3>', unconnected in block 'CoProcessor', is
     Found 1-bit register for signal <Status<0>>.
     Found 1-bit register for signal <Status<2>>.
     Summary:
-	inferred  35 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
 Unit <CoProcessor> synthesized.
 
 Synthesizing Unit <Stage_4>.
@@ -664,96 +667,59 @@ Unit <Stage_4> synthesized.
 Synthesizing Unit <Memory>.
     Related source file is "C:\Users\29593\Documents\cyk\computer-system\single_cpu\single_cpu\Memory.v".
 WARNING:Xst:647 - Input <address<31:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <mem_write_data<23:23>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:3012 - Available block RAM resources offer a maximum of two write ports. You are apparently describing a RAM with 4 separate write ports for signal <mem>. The RAM will be expanded on registers.
-INFO:Xst:3019 - HDL ADVISOR - 512 flip-flops were inferred for signal <mem>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
-    Found 8-bit register for signal <mem_ff_0>.
-    Found 8-bit register for signal <mem_ff_1>.
-    Found 8-bit register for signal <mem_ff_2>.
-    Found 8-bit register for signal <mem_ff_3>.
-    Found 8-bit register for signal <mem_ff_4>.
-    Found 8-bit register for signal <mem_ff_5>.
-    Found 8-bit register for signal <mem_ff_6>.
-    Found 8-bit register for signal <mem_ff_7>.
-    Found 8-bit register for signal <mem_ff_8>.
-    Found 8-bit register for signal <mem_ff_9>.
-    Found 8-bit register for signal <mem_ff_10>.
-    Found 8-bit register for signal <mem_ff_11>.
-    Found 8-bit register for signal <mem_ff_12>.
-    Found 8-bit register for signal <mem_ff_13>.
-    Found 8-bit register for signal <mem_ff_14>.
-    Found 8-bit register for signal <mem_ff_15>.
-    Found 8-bit register for signal <mem_ff_16>.
-    Found 8-bit register for signal <mem_ff_17>.
-    Found 8-bit register for signal <mem_ff_18>.
-    Found 8-bit register for signal <mem_ff_19>.
-    Found 8-bit register for signal <mem_ff_20>.
-    Found 8-bit register for signal <mem_ff_21>.
-    Found 8-bit register for signal <mem_ff_22>.
-    Found 8-bit register for signal <mem_ff_23>.
-    Found 8-bit register for signal <mem_ff_24>.
-    Found 8-bit register for signal <mem_ff_25>.
-    Found 8-bit register for signal <mem_ff_26>.
-    Found 8-bit register for signal <mem_ff_27>.
-    Found 8-bit register for signal <mem_ff_28>.
-    Found 8-bit register for signal <mem_ff_29>.
-    Found 8-bit register for signal <mem_ff_30>.
-    Found 8-bit register for signal <mem_ff_31>.
-    Found 8-bit register for signal <mem_ff_32>.
-    Found 8-bit register for signal <mem_ff_33>.
-    Found 8-bit register for signal <mem_ff_34>.
-    Found 8-bit register for signal <mem_ff_35>.
-    Found 8-bit register for signal <mem_ff_36>.
-    Found 8-bit register for signal <mem_ff_37>.
-    Found 8-bit register for signal <mem_ff_38>.
-    Found 8-bit register for signal <mem_ff_39>.
-    Found 8-bit register for signal <mem_ff_40>.
-    Found 8-bit register for signal <mem_ff_41>.
-    Found 8-bit register for signal <mem_ff_42>.
-    Found 8-bit register for signal <mem_ff_43>.
-    Found 8-bit register for signal <mem_ff_44>.
-    Found 8-bit register for signal <mem_ff_45>.
-    Found 8-bit register for signal <mem_ff_46>.
-    Found 8-bit register for signal <mem_ff_47>.
-    Found 8-bit register for signal <mem_ff_48>.
-    Found 8-bit register for signal <mem_ff_49>.
-    Found 8-bit register for signal <mem_ff_50>.
-    Found 8-bit register for signal <mem_ff_51>.
-    Found 8-bit register for signal <mem_ff_52>.
-    Found 8-bit register for signal <mem_ff_53>.
-    Found 8-bit register for signal <mem_ff_54>.
-    Found 8-bit register for signal <mem_ff_55>.
-    Found 8-bit register for signal <mem_ff_56>.
-    Found 8-bit register for signal <mem_ff_57>.
-    Found 8-bit register for signal <mem_ff_58>.
-    Found 8-bit register for signal <mem_ff_59>.
-    Found 8-bit register for signal <mem_ff_60>.
-    Found 8-bit register for signal <mem_ff_61>.
-    Found 8-bit register for signal <mem_ff_62>.
-    Found 8-bit register for signal <mem_ff_63>.
-    Found 6-bit adder for signal <addr[5]_GND_59_o_add_26_OUT> created at line 82.
-    Found 6-bit adder for signal <addr[5]_GND_59_o_add_28_OUT> created at line 82.
-    Found 6-bit adder for signal <addr[5]_GND_59_o_add_30_OUT> created at line 82.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_66_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_68_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_70_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_72_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_74_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_76_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_78_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_80_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_82_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_84_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_86_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_88_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_90_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_92_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_94_o> created at line 74.
-    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_96_o> created at line 74.
-    Found 8-bit 64-to-1 multiplexer for signal <addr[5]_read_port_20_OUT> created at line 0.
-    Found 8-bit 64-to-1 multiplexer for signal <addr[5]_read_port_22_OUT> created at line 0.
-    Found 8-bit 64-to-1 multiplexer for signal <addr[5]_read_port_29_OUT> created at line 0.
-    Found 8-bit 64-to-1 multiplexer for signal <addr[5]_read_port_31_OUT> created at line 0.
+    Found 512-bit register for signal <n0735[511:0]>.
+    Found 7-bit adder for signal <n1199> created at line 83.
+    Found 7-bit adder for signal <n1264> created at line 83.
+    Found 7-bit adder for signal <n1265> created at line 83.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_515_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_517_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_519_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_521_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_523_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_525_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_527_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_529_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_531_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_533_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_535_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_537_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_539_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_541_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_543_o> created at line 75.
+    Found 1-bit 3-to-1 multiplexer for signal <mem_length[1]_addr[5]_Mux_545_o> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_469_OUT<7>> created at line 0.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_474_OUT<6>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_474_OUT<5>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_474_OUT<4>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_474_OUT<3>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_474_OUT<2>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_474_OUT<1>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_474_OUT<0>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<7>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<6>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<5>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<4>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<3>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<2>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<1>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_476_OUT<0>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<7>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<6>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<5>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<4>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<3>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<2>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<1>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_478_OUT<0>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<7>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<6>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<5>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<4>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<3>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<2>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<1>> created at line 75.
+    Found 1-bit 64-to-1 multiplexer for signal <addr[5]_mem[63][7]_wide_mux_480_OUT<0>> created at line 75.
+WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -785,269 +751,15 @@ WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<3>>. Latches may b
 WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <mem_read_data<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 8-bit tristate buffer for signal <mem_trst_0> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_0> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_0> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_0> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_1> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_1> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_1> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_1> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_2> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_2> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_2> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_2> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_3> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_3> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_3> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_3> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_4> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_4> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_4> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_4> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_5> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_5> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_5> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_5> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_6> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_6> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_6> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_6> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_7> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_7> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_7> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_7> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_8> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_8> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_8> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_8> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_9> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_9> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_9> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_9> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_10> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_10> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_10> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_10> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_11> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_11> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_11> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_11> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_12> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_12> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_12> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_12> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_13> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_13> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_13> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_13> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_14> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_14> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_14> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_14> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_15> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_15> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_15> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_15> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_16> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_16> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_16> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_16> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_17> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_17> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_17> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_17> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_18> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_18> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_18> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_18> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_19> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_19> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_19> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_19> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_20> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_20> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_20> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_20> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_21> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_21> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_21> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_21> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_22> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_22> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_22> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_22> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_23> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_23> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_23> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_23> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_24> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_24> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_24> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_24> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_25> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_25> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_25> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_25> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_26> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_26> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_26> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_26> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_27> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_27> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_27> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_27> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_28> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_28> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_28> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_28> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_29> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_29> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_29> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_29> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_30> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_30> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_30> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_30> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_31> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_31> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_31> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_31> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_32> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_32> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_32> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_32> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_33> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_33> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_33> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_33> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_34> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_34> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_34> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_34> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_35> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_35> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_35> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_35> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_36> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_36> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_36> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_36> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_37> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_37> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_37> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_37> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_38> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_38> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_38> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_38> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_39> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_39> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_39> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_39> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_40> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_40> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_40> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_40> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_41> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_41> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_41> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_41> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_42> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_42> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_42> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_42> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_43> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_43> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_43> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_43> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_44> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_44> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_44> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_44> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_45> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_45> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_45> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_45> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_46> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_46> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_46> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_46> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_47> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_47> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_47> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_47> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_48> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_48> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_48> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_48> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_49> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_49> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_49> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_49> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_50> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_50> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_50> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_50> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_51> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_51> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_51> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_51> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_52> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_52> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_52> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_52> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_53> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_53> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_53> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_53> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_54> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_54> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_54> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_54> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_55> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_55> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_55> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_55> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_56> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_56> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_56> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_56> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_57> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_57> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_57> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_57> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_58> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_58> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_58> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_58> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_59> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_59> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_59> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_59> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_60> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_60> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_60> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_60> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_61> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_61> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_61> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_61> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_62> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_62> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_62> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_62> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_63> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_63> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_63> created at line 49
-    Found 8-bit tristate buffer for signal <mem_trst_63> created at line 49
+    Found 7-bit comparator lessequal for signal <n0259> created at line 64
+    Found 7-bit comparator lessequal for signal <n0390> created at line 65
+    Found 7-bit comparator lessequal for signal <n0521> created at line 66
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred 512 D-type flip-flop(s).
 	inferred  32 Latch(s).
-	inferred  47 Multiplexer(s).
-	inferred 256 Tristate(s).
+	inferred   3 Comparator(s).
+	inferred 513 Multiplexer(s).
 Unit <Memory> synthesized.
 
 Synthesizing Unit <Stage_5>.
@@ -1097,22 +809,23 @@ Macro Statistics
  57-bit adder                                          : 4
  58-bit adder                                          : 4
  59-bit adder                                          : 4
- 6-bit adder                                           : 5
+ 6-bit adder                                           : 2
  60-bit adder                                          : 4
  61-bit adder                                          : 4
  62-bit adder                                          : 4
  63-bit adder                                          : 4
  64-bit adder                                          : 4
+ 7-bit adder                                           : 3
  7-bit subtractor                                      : 3
-# Registers                                            : 74
+# Registers                                            : 12
  1-bit register                                        : 5
  3-bit register                                        : 1
- 32-bit register                                       : 2
+ 32-bit register                                       : 3
  33-bit register                                       : 2
- 8-bit register                                        : 64
+ 512-bit register                                      : 1
 # Latches                                              : 64
  1-bit latch                                           : 64
-# Comparators                                          : 70
+# Comparators                                          : 73
  1-bit comparator not equal                            : 2
  32-bit comparator greater                             : 2
  32-bit comparator lessequal                           : 2
@@ -1148,27 +861,27 @@ Macro Statistics
  62-bit comparator lessequal                           : 2
  63-bit comparator lessequal                           : 2
  64-bit comparator lessequal                           : 2
-# Multiplexers                                         : 2085
- 1-bit 2-to-1 multiplexer                              : 2013
+ 7-bit comparator lessequal                            : 3
+# Multiplexers                                         : 2554
+ 1-bit 2-to-1 multiplexer                              : 2010
  1-bit 3-to-1 multiplexer                              : 16
  1-bit 4-to-1 multiplexer                              : 1
  1-bit 6-to-1 multiplexer                              : 1
+ 1-bit 64-to-1 multiplexer                             : 32
  1-bit 7-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 33
+ 32-bit 2-to-1 multiplexer                             : 35
  33-bit 2-to-1 multiplexer                             : 2
  4-bit 7-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 5
  7-bit 2-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 6
- 8-bit 64-to-1 multiplexer                             : 4
+ 8-bit 2-to-1 multiplexer                              : 384
+ 9-bit 2-to-1 multiplexer                              : 64
 # Logic shifters                                       : 15
  32-bit shifter arithmetic right                       : 2
  32-bit shifter logical left                           : 6
  32-bit shifter logical right                          : 5
  64-bit shifter logical right                          : 2
-# Tristates                                            : 256
- 8-bit tristate buffer                                 : 256
 # Xors                                                 : 1
  32-bit xor2                                           : 1
 
@@ -1178,8 +891,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1293 - FF/Latch <Status_2> has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Status_1> has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Status_2> has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <ClockDivider>.
 The following registers are absorbed into counter <clock_count>: 1 register on signal <clock_count>.
@@ -1257,15 +970,16 @@ Macro Statistics
  32-bit subtractor                                     : 3
  33-bit adder                                          : 1
  33-bit subtractor                                     : 1
- 6-bit adder                                           : 5
+ 6-bit adder                                           : 2
+ 7-bit adder                                           : 3
  7-bit subtractor                                      : 3
  8-bit subtractor                                      : 1
 # Counters                                             : 3
  3-bit up counter                                      : 1
  33-bit up counter                                     : 2
-# Registers                                            : 581
- Flip-Flops                                            : 581
-# Comparators                                          : 70
+# Registers                                            : 613
+ Flip-Flops                                            : 613
+# Comparators                                          : 73
  1-bit comparator not equal                            : 2
  32-bit comparator greater                             : 2
  32-bit comparator lessequal                           : 2
@@ -1301,18 +1015,20 @@ Macro Statistics
  62-bit comparator lessequal                           : 2
  63-bit comparator lessequal                           : 2
  64-bit comparator lessequal                           : 2
-# Multiplexers                                         : 2081
- 1-bit 2-to-1 multiplexer                              : 2012
+ 7-bit comparator lessequal                            : 3
+# Multiplexers                                         : 2550
+ 1-bit 2-to-1 multiplexer                              : 2009
  1-bit 3-to-1 multiplexer                              : 16
  1-bit 4-to-1 multiplexer                              : 1
  1-bit 6-to-1 multiplexer                              : 1
+ 1-bit 64-to-1 multiplexer                             : 32
  1-bit 7-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 33
+ 32-bit 2-to-1 multiplexer                             : 35
  4-bit 7-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 5
  7-bit 2-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 6
- 8-bit 64-to-1 multiplexer                             : 4
+ 8-bit 2-to-1 multiplexer                              : 384
+ 9-bit 2-to-1 multiplexer                              : 64
 # Logic shifters                                       : 15
  32-bit shifter arithmetic right                       : 2
  32-bit shifter logical left                           : 6
@@ -1326,10 +1042,8 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <Status_2> has a constant value of 0 in block <CoProcessor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Status_1> has a constant value of 0 in block <CoProcessor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2973 - All outputs of instance <Stage_4/Stage_4_Memory> of block <Memory> are unconnected in block <Single_Cpu>. Underlying logic will be removed.
-WARNING:Xst:2040 - Unit Memory: 512 multi-source signals are replaced by logic (pull-up yes): mem_trst_0<1>, mem_trst_0<2>, mem_trst_0<3>, mem_trst_0<4>, mem_trst_0<5>, mem_trst_0<6>, mem_trst_0<7>, mem_trst_0<8>, mem_trst_10<1>, mem_trst_10<2>, mem_trst_10<3>, mem_trst_10<4>, mem_trst_10<5>, mem_trst_10<6>, mem_trst_10<7>, mem_trst_10<8>, mem_trst_11<1>, mem_trst_11<2>, mem_trst_11<3>, mem_trst_11<4>, mem_trst_11<5>, mem_trst_11<6>, mem_trst_11<7>, mem_trst_11<8>, mem_trst_12<1>, mem_trst_12<2>, mem_trst_12<3>, mem_trst_12<4>, mem_trst_12<5>, mem_trst_12<6>, mem_trst_12<7>, mem_trst_12<8>, mem_trst_13<1>, mem_trst_13<2>, mem_trst_13<3>, mem_trst_13<4>, mem_trst_13<5>, mem_trst_13<6>, mem_trst_13<7>, mem_trst_13<8>, mem_trst_14<1>, mem_trst_14<2>, mem_trst_14<3>, mem_trst_14<4>, mem_trst_14<5>, mem_trst_14<6>, mem_trst_14<7>, mem_trst_14<8>, mem_trst_15<1>, mem_trst_15<2>, mem_trst_15<3>, mem_trst_15<4>, mem_trst_15<5>, mem_trst_15<6>, mem_trst_15<7>, mem_trst_15<8>, mem_trst_16<1>, mem_trst_16<2>, mem_trst_16<3>, mem_trst_16<4>, mem_trst_16<5>, mem_trst_16<6>, mem_trst_16<7>, mem_trst_16<8>, mem_trst_17<1>, mem_trst_17<2>, mem_trst_17<3>, mem_trst_17<4>, mem_trst_17<5>, mem_trst_17<6>, mem_trst_17<7>, mem_trst_17<8>, mem_trst_18<1>, mem_trst_18<2>, mem_trst_18<3>, mem_trst_18<4>, mem_trst_18<5>, mem_trst_18<6>, mem_trst_18<7>, mem_trst_18<8>, mem_trst_19<1>, mem_trst_19<2>, mem_trst_19<3>, mem_trst_19<4>, mem_trst_19<5>, mem_trst_19<6>, mem_trst_19<7>, mem_trst_19<8>, mem_trst_1<1>, mem_trst_1<2>, mem_trst_1<3>, mem_trst_1<4>, mem_trst_1<5>, mem_trst_1<6>, mem_trst_1<7>, mem_trst_1<8>, mem_trst_20<1>, mem_trst_20<2>, mem_trst_20<3>, mem_trst_20<4>, mem_trst_20<5>, mem_trst_20<6>, mem_trst_20<7>, mem_trst_20<8>, mem_trst_21<1>, mem_trst_21<2>, mem_trst_21<3>, mem_trst_21<4>, mem_trst_21<5>, mem_trst_21<6>, mem_trst_21<7>, mem_trst_21<8>, mem_trst_22<1>, mem_trst_22<2>, mem_trst_22<3>, mem_trst_22<4>, mem_trst_22<5>, mem_trst_22<6>, mem_trst_22<7>, mem_trst_22<8>, mem_trst_23<1>, mem_trst_23<2>, mem_trst_23<3>, mem_trst_23<4>, mem_trst_23<5>, mem_trst_23<6>, mem_trst_23<7>, mem_trst_23<8>, mem_trst_24<1>, mem_trst_24<2>, mem_trst_24<3>, mem_trst_24<4>, mem_trst_24<5>, mem_trst_24<6>, mem_trst_24<7>, mem_trst_24<8>, mem_trst_25<1>, mem_trst_25<2>, mem_trst_25<3>, mem_trst_25<4>, mem_trst_25<5>, mem_trst_25<6>, mem_trst_25<7>, mem_trst_25<8>, mem_trst_26<1>, mem_trst_26<2>, mem_trst_26<3>, mem_trst_26<4>, mem_trst_26<5>, mem_trst_26<6>, mem_trst_26<7>, mem_trst_26<8>, mem_trst_27<1>, mem_trst_27<2>, mem_trst_27<3>, mem_trst_27<4>, mem_trst_27<5>, mem_trst_27<6>, mem_trst_27<7>, mem_trst_27<8>, mem_trst_28<1>, mem_trst_28<2>, mem_trst_28<3>, mem_trst_28<4>, mem_trst_28<5>, mem_trst_28<6>, mem_trst_28<7>, mem_trst_28<8>, mem_trst_29<1>, mem_trst_29<2>, mem_trst_29<3>, mem_trst_29<4>, mem_trst_29<5>, mem_trst_29<6>, mem_trst_29<7>, mem_trst_29<8>, mem_trst_2<1>, mem_trst_2<2>, mem_trst_2<3>, mem_trst_2<4>, mem_trst_2<5>, mem_trst_2<6>, mem_trst_2<7>, mem_trst_2<8>, mem_trst_30<1>, mem_trst_30<2>, mem_trst_30<3>, mem_trst_30<4>, mem_trst_30<5>, mem_trst_30<6>, mem_trst_30<7>, mem_trst_30<8>, mem_trst_31<1>, mem_trst_31<2>, mem_trst_31<3>, mem_trst_31<4>, mem_trst_31<5>, mem_trst_31<6>, mem_trst_31<7>, mem_trst_31<8>, mem_trst_32<1>, mem_trst_32<2>, mem_trst_32<3>, mem_trst_32<4>, mem_trst_32<5>, mem_trst_32<6>, mem_trst_32<7>, mem_trst_32<8>, mem_trst_33<1>, mem_trst_33<2>, mem_trst_33<3>, mem_trst_33<4>, mem_trst_33<5>, mem_trst_33<6>, mem_trst_33<7>, mem_trst_33<8>, mem_trst_34<1>, mem_trst_34<2>, mem_trst_34<3>, mem_trst_34<4>, mem_trst_34<5>, mem_trst_34<6>, mem_trst_34<7>, mem_trst_34<8>, mem_trst_35<1>, mem_trst_35<2>, mem_trst_35<3>, mem_trst_35<4>, mem_trst_35<5>, mem_trst_35<6>, mem_trst_35<7>, mem_trst_35<8>, mem_trst_36<1>, mem_trst_36<2>, mem_trst_36<3>, mem_trst_36<4>, mem_trst_36<5>, mem_trst_36<6>, mem_trst_36<7>, mem_trst_36<8>, mem_trst_37<1>, mem_trst_37<2>, mem_trst_37<3>, mem_trst_37<4>, mem_trst_37<5>, mem_trst_37<6>, mem_trst_37<7>, mem_trst_37<8>, mem_trst_38<1>, mem_trst_38<2>, mem_trst_38<3>, mem_trst_38<4>, mem_trst_38<5>, mem_trst_38<6>, mem_trst_38<7>, mem_trst_38<8>, mem_trst_39<1>, mem_trst_39<2>, mem_trst_39<3>, mem_trst_39<4>, mem_trst_39<5>, mem_trst_39<6>, mem_trst_39<7>, mem_trst_39<8>, mem_trst_3<1>, mem_trst_3<2>, mem_trst_3<3>, mem_trst_3<4>, mem_trst_3<5>, mem_trst_3<6>, mem_trst_3<7>, mem_trst_3<8>, mem_trst_40<1>, mem_trst_40<2>, mem_trst_40<3>, mem_trst_40<4>, mem_trst_40<5>, mem_trst_40<6>, mem_trst_40<7>, mem_trst_40<8>, mem_trst_41<1>, mem_trst_41<2>, mem_trst_41<3>, mem_trst_41<4>, mem_trst_41<5>, mem_trst_41<6>, mem_trst_41<7>, mem_trst_41<8>, mem_trst_42<1>, mem_trst_42<2>, mem_trst_42<3>, mem_trst_42<4>, mem_trst_42<5>, mem_trst_42<6>, mem_trst_42<7>, mem_trst_42<8>, mem_trst_43<1>, mem_trst_43<2>, mem_trst_43<3>, mem_trst_43<4>, mem_trst_43<5>, mem_trst_43<6>, mem_trst_43<7>, mem_trst_43<8>, mem_trst_44<1>, mem_trst_44<2>, mem_trst_44<3>, mem_trst_44<4>, mem_trst_44<5>, mem_trst_44<6>, mem_trst_44<7>, mem_trst_44<8>, mem_trst_45<1>, mem_trst_45<2>, mem_trst_45<3>, mem_trst_45<4>, mem_trst_45<5>, mem_trst_45<6>, mem_trst_45<7>, mem_trst_45<8>, mem_trst_46<1>, mem_trst_46<2>, mem_trst_46<3>, mem_trst_46<4>, mem_trst_46<5>, mem_trst_46<6>, mem_trst_46<7>, mem_trst_46<8>, mem_trst_47<1>, mem_trst_47<2>, mem_trst_47<3>, mem_trst_47<4>, mem_trst_47<5>, mem_trst_47<6>, mem_trst_47<7>, mem_trst_47<8>, mem_trst_48<1>, mem_trst_48<2>, mem_trst_48<3>, mem_trst_48<4>, mem_trst_48<5>, mem_trst_48<6>, mem_trst_48<7>, mem_trst_48<8>, mem_trst_49<1>, mem_trst_49<2>, mem_trst_49<3>, mem_trst_49<4>, mem_trst_49<5>, mem_trst_49<6>, mem_trst_49<7>, mem_trst_49<8>, mem_trst_4<1>, mem_trst_4<2>, mem_trst_4<3>, mem_trst_4<4>, mem_trst_4<5>, mem_trst_4<6>, mem_trst_4<7>, mem_trst_4<8>, mem_trst_50<1>, mem_trst_50<2>, mem_trst_50<3>, mem_trst_50<4>, mem_trst_50<5>, mem_trst_50<6>, mem_trst_50<7>, mem_trst_50<8>, mem_trst_51<1>, mem_trst_51<2>, mem_trst_51<3>, mem_trst_51<4>, mem_trst_51<5>, mem_trst_51<6>, mem_trst_51<7>, mem_trst_51<8>, mem_trst_52<1>, mem_trst_52<2>, mem_trst_52<3>, mem_trst_52<4>, mem_trst_52<5>, mem_trst_52<6>, mem_trst_52<7>, mem_trst_52<8>, mem_trst_53<1>, mem_trst_53<2>, mem_trst_53<3>, mem_trst_53<4>, mem_trst_53<5>, mem_trst_53<6>, mem_trst_53<7>, mem_trst_53<8>, mem_trst_54<1>, mem_trst_54<2>, mem_trst_54<3>, mem_trst_54<4>, mem_trst_54<5>, mem_trst_54<6>, mem_trst_54<7>, mem_trst_54<8>, mem_trst_55<1>, mem_trst_55<2>, mem_trst_55<3>, mem_trst_55<4>, mem_trst_55<5>, mem_trst_55<6>, mem_trst_55<7>, mem_trst_55<8>, mem_trst_56<1>, mem_trst_56<2>, mem_trst_56<3>, mem_trst_56<4>, mem_trst_56<5>, mem_trst_56<6>, mem_trst_56<7>, mem_trst_56<8>, mem_trst_57<1>, mem_trst_57<2>, mem_trst_57<3>, mem_trst_57<4>, mem_trst_57<5>, mem_trst_57<6>, mem_trst_57<7>, mem_trst_57<8>, mem_trst_58<1>, mem_trst_58<2>, mem_trst_58<3>, mem_trst_58<4>, mem_trst_58<5>, mem_trst_58<6>, mem_trst_58<7>, mem_trst_58<8>, mem_trst_59<1>, mem_trst_59<2>, mem_trst_59<3>, mem_trst_59<4>, mem_trst_59<5>, mem_trst_59<6>, mem_trst_59<7>, mem_trst_59<8>, mem_trst_5<1>, mem_trst_5<2>, mem_trst_5<3>, mem_trst_5<4>, mem_trst_5<5>, mem_trst_5<6>, mem_trst_5<7>, mem_trst_5<8>, mem_trst_60<1>, mem_trst_60<2>, mem_trst_60<3>, mem_trst_60<4>, mem_trst_60<5>, mem_trst_60<6>, mem_trst_60<7>, mem_trst_60<8>, mem_trst_61<1>, mem_trst_61<2>, mem_trst_61<3>, mem_trst_61<4>, mem_trst_61<5>, mem_trst_61<6>, mem_trst_61<7>, mem_trst_61<8>, mem_trst_62<1>, mem_trst_62<2>, mem_trst_62<3>, mem_trst_62<4>, mem_trst_62<5>, mem_trst_62<6>, mem_trst_62<7>, mem_trst_62<8>, mem_trst_63<1>, mem_trst_63<2>, mem_trst_63<3>, mem_trst_63<4>, mem_trst_63<5>, mem_trst_63<6>, mem_trst_63<7>, mem_trst_63<8>, mem_trst_6<1>, mem_trst_6<2>, mem_trst_6<3>, mem_trst_6<4>, mem_trst_6<5>, mem_trst_6<6>, mem_trst_6<7>, mem_trst_6<8>, mem_trst_7<1>, mem_trst_7<2>, mem_trst_7<3>, mem_trst_7<4>, mem_trst_7<5>, mem_trst_7<6>, mem_trst_7<7>, mem_trst_7<8>, mem_trst_8<1>, mem_trst_8<2>, mem_trst_8<3>, mem_trst_8<4>, mem_trst_8<5>, mem_trst_8<6>, mem_trst_8<7>, mem_trst_8<8>, mem_trst_9<1>, mem_trst_9<2>, mem_trst_9<3>, mem_trst_9<4>, mem_trst_9<5>, mem_trst_9<6>, mem_trst_9<7>, mem_trst_9<8>.
+WARNING:Xst:1293 - FF/Latch <Status_1> has a constant value of 0 in block <CoProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Status_2> has a constant value of 0 in block <CoProcessor>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <Single_Cpu_board> ...
 
@@ -1342,33 +1056,10 @@ Optimizing unit <Alu> ...
 Optimizing unit <CoProcessor> ...
 
 Optimizing unit <Memory> ...
-WARNING:Xst:1710 - FF/Latch <Input_ClockDivider/clock_count_32> (without init value) has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Input_ClockDivider/clock_count_31> (without init value) has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Input_ClockDivider/clock_count_30> (without init value) has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Input_ClockDivider/clock_count_29> (without init value) has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Input_ClockDivider/clock_count_28> (without init value) has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Input_ClockDivider/clock_count_27> (without init value) has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_32> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_31> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_30> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_29> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_28> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_27> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_26> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_25> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_24> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_23> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_22> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_21> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_20> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_19> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_18> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_17> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M1_ClockDivider/clock_count_16> has a constant value of 0 in block <Single_Cpu_board>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Single_Cpu_board, actual ratio is 6.
+Found area constraint ratio of 100 (+ 5) on block Single_Cpu_board, actual ratio is 22.
 
 Final Macro Processing ...
 
@@ -1376,8 +1067,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 113
- Flip-Flops                                            : 113
+# Registers                                            : 680
+ Flip-Flops                                            : 680
 
 =========================================================================
 
@@ -1400,30 +1091,31 @@ Top Level Output File Name         : Single_Cpu_board.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1935
+# BELS                             : 6405
 #      GND                         : 1
 #      INV                         : 10
-#      LUT1                        : 69
-#      LUT2                        : 84
-#      LUT3                        : 131
-#      LUT4                        : 263
-#      LUT5                        : 275
-#      LUT6                        : 653
-#      MUXCY                       : 223
-#      MUXF7                       : 25
+#      LUT1                        : 92
+#      LUT2                        : 135
+#      LUT3                        : 224
+#      LUT4                        : 377
+#      LUT5                        : 1021
+#      LUT6                        : 3966
+#      MUXCY                       : 246
+#      MUXF7                       : 109
 #      VCC                         : 1
-#      XORCY                       : 200
-# FlipFlops/Latches                : 145
-#      FDC                         : 75
+#      XORCY                       : 223
+# FlipFlops/Latches                : 744
+#      FDC                         : 98
 #      FDE                         : 2
-#      FDE_1                       : 33
+#      FDE_1                       : 577
 #      FDP                         : 3
 #      LD                          : 32
+#      LDE                         : 32
 # RAMS                             : 14
 #      RAM32M                      : 10
 #      RAM32X1D                    : 4
-# Clock Buffers                    : 3
-#      BUFG                        : 2
+# Clock Buffers                    : 4
+#      BUFG                        : 3
 #      BUFGP                       : 1
 # IO Buffers                       : 21
 #      IBUF                        : 7
@@ -1438,25 +1130,25 @@ Selected Device : 6slx45csg484-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             145  out of  54576     0%  
- Number of Slice LUTs:                 1533  out of  27288     5%  
-    Number used as Logic:              1485  out of  27288     5%  
+ Number of Slice Registers:             744  out of  54576     1%  
+ Number of Slice LUTs:                 5873  out of  27288    21%  
+    Number used as Logic:              5825  out of  27288    21%  
     Number used as Memory:               48  out of   6408     0%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1570
-   Number with an unused Flip Flop:    1425  out of   1570    90%  
-   Number with an unused LUT:            37  out of   1570     2%  
-   Number of fully used LUT-FF pairs:   108  out of   1570     6%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:   5918
+   Number with an unused Flip Flop:    5174  out of   5918    87%  
+   Number with an unused LUT:            45  out of   5918     0%  
+   Number of fully used LUT-FF pairs:   699  out of   5918    11%  
+   Number of unique control sets:        11
 
 IO Utilization: 
  Number of IOs:                          22
  Number of bonded IOBs:                  22  out of    320     6%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
  Number of DSP48A1s:                      8  out of     58    13%  
 
 ---------------------------
@@ -1477,15 +1169,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------------------------------------------------------------+--------------------------------------------------------+-------+
-Clock Signal                                                                                   | Clock buffer(FF name)                                  | Load  |
------------------------------------------------------------------------------------------------+--------------------------------------------------------+-------+
-CLK                                                                                            | BUFGP                                                  | 45    |
-M1_ClockDivider/DividedClock                                                                   | NONE(M2_SevenSegsController/select_display_2)          | 3     |
-Input_ClockDivider/DividedClock                                                                | BUFG                                                   | 79    |
-Single_Cpu_real/Stage_3/Stage_3_Alu/_n0303(Single_Cpu_real/Stage_3/Stage_3_Alu/Mmux__n030311:O)| BUFG(*)(Single_Cpu_real/Stage_3/Stage_3_Alu/w_cpdata_0)| 32    |
------------------------------------------------------------------------------------------------+--------------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
+Clock Signal                                                                                   | Clock buffer(FF name)                                          | Load  |
+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
+CLK                                                                                            | BUFGP                                                          | 68    |
+M1_ClockDivider/DividedClock                                                                   | NONE(M2_SevenSegsController/select_display_2)                  | 3     |
+Input_ClockDivider/DividedClock                                                                | BUFG                                                           | 623   |
+Single_Cpu_real/Stage_3/Stage_3_Alu/_n0304(Single_Cpu_real/Stage_3/Stage_3_Alu/Mmux__n030411:O)| BUFG(*)(Single_Cpu_real/Stage_3/Stage_3_Alu/w_cpdata_0)        | 32    |
+Single_Cpu_real/memread(Single_Cpu_real/Stage_2/Stage_2_Controller/out31:O)                    | BUFG(*)(Single_Cpu_real/Stage_4/Stage_4_Memory/mem_read_data_8)| 32    |
+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -1498,9 +1191,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 47.093ns (Maximum Frequency: 21.234MHz)
-   Minimum input arrival time before clock: 4.783ns
-   Maximum output required time after clock: 28.853ns
+   Minimum period: 56.391ns (Maximum Frequency: 17.733MHz)
+   Minimum input arrival time before clock: 7.084ns
+   Maximum output required time after clock: 7.341ns
    Maximum combinational path delay: 7.545ns
 
 Timing Details:
@@ -1509,27 +1202,27 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 4.892ns (frequency: 204.426MHz)
-  Total number of paths / destination ports: 1544 / 47
+  Clock period: 5.205ns (frequency: 192.139MHz)
+  Total number of paths / destination ports: 3368 / 70
 -------------------------------------------------------------------------
-Delay:               4.892ns (Levels of Logic = 3)
-  Source:            M1_ClockDivider/clock_count_1 (FF)
-  Destination:       M1_ClockDivider/DividedClock (FF)
+Delay:               5.205ns (Levels of Logic = 3)
+  Source:            Input_ClockDivider/clock_count_21 (FF)
+  Destination:       Input_ClockDivider/DividedClock (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: M1_ClockDivider/clock_count_1 to M1_ClockDivider/DividedClock
+  Data Path: Input_ClockDivider/clock_count_21 to Input_ClockDivider/DividedClock
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.447   0.981  M1_ClockDivider/clock_count_1 (M1_ClockDivider/clock_count_1)
-     LUT6:I0->O            1   0.203   0.924  M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o<32>2 (M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o<32>1)
-     LUT6:I1->O           17   0.203   1.028  M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o<32>3 (M1_ClockDivider/clock_count[32]_GND_3_o_equal_3_o)
-     LUT2:I1->O            1   0.205   0.579  M1_ClockDivider/_n0018_inv1 (M1_ClockDivider/_n0018_inv)
-     FDE:CE                    0.322          M1_ClockDivider/DividedClock
+     FDC:C->Q              2   0.447   0.981  Input_ClockDivider/clock_count_21 (Input_ClockDivider/clock_count_21)
+     LUT6:I0->O            1   0.203   0.944  Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o<32>1 (Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o<32>)
+     LUT6:I0->O           34   0.203   1.321  Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o<32>7 (Input_ClockDivider/clock_count[32]_GND_2_o_equal_3_o)
+     LUT2:I1->O            1   0.205   0.579  Input_ClockDivider/_n0018_inv1 (Input_ClockDivider/_n0018_inv)
+     FDE:CE                    0.322          Input_ClockDivider/DividedClock
     ----------------------------------------
-    Total                      4.892ns (1.380ns logic, 3.512ns route)
-                                       (28.2% logic, 71.8% route)
+    Total                      5.205ns (1.380ns logic, 3.825ns route)
+                                       (26.5% logic, 73.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'M1_ClockDivider/DividedClock'
@@ -1555,39 +1248,43 @@ Delay:               2.405ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Input_ClockDivider/DividedClock'
-  Clock period: 47.093ns (frequency: 21.234MHz)
-  Total number of paths / destination ports: 28065102651 / 230
+  Clock period: 56.391ns (frequency: 17.733MHz)
+  Total number of paths / destination ports: 8505747330451 / 1320
 -------------------------------------------------------------------------
-Delay:               23.547ns (Levels of Logic = 9)
+Delay:               28.196ns (Levels of Logic = 13)
   Source:            Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 (FF)
-  Destination:       Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4 (RAM)
+  Destination:       Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_87 (FF)
   Source Clock:      Input_ClockDivider/DividedClock rising
   Destination Clock: Input_ClockDivider/DividedClock falling
 
-  Data Path: Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 to Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4
+  Data Path: Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 to Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_87
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              6   0.447   0.849  Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 (Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3)
-     LUT2:I0->O           19   0.203   1.416  Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/Msub_address_Madd_xor<3>11 (Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/address<3>)
-     LUT5:I0->O          233   0.203   2.062  Single_Cpu_real_instruction<27>1 (Single_Cpu_real/Stage_3/Stage_3_Alu/GND_16_o_GND_16_o_sub_105_OUT<2>1)
-     LUT5:I4->O           14   0.205   0.958  Single_Cpu_real/Stage_2/Stage_2_Controller/alusrc1_1 (Single_Cpu_real/Stage_2/Stage_2_Controller/alusrc1)
-     LUT3:I2->O           17   0.205   1.027  Single_Cpu_real/Stage_2/Mmux_alu_data_2281 (Single_Cpu_real/Stage_3/Stage_3_Alu/Sh133)
-     DSP48A1:B5->P47      18   4.394   1.049  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT_P47_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT1)
-     DSP48A1:C30->PCOUT47    1   2.689   0.000  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT1 (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT1_PCOUT_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT2_PCIN_47)
-     DSP48A1:PCIN47->P47   18   2.264   1.049  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT2 (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT2_P47_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT3)
-     DSP48A1:C30->P16      1   2.687   0.684  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT3 (Single_Cpu_real/Stage_3/Stage_3_Alu/alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT<50>)
-     LUT6:I4->O            3   0.203   0.650  Single_Cpu_real/Stage_3/Mmux_alu_result1016 (n0003<18>)
-     RAM32M:DIA0               0.303          Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers14
+     LUT2:I0->O           24   0.203   1.517  Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/Msub_address_Madd_xor<3>11 (Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/address<3>)
+     LUT6:I1->O           98   0.203   1.969  Single_Cpu_real_Stage_1/Stage_1_Inst_Rom/Mram_inst_rom261 (Single_Cpu_real/instruction<26>)
+     LUT6:I4->O           17   0.203   1.028  Single_Cpu_real/Stage_2/Stage_2_Controller/alusrc1_1 (Single_Cpu_real/Stage_2/Stage_2_Controller/alusrc1)
+     LUT3:I2->O           19   0.205   1.071  Single_Cpu_real/Stage_2/Mmux_alu_data_2301 (Single_Cpu_real/alu_data_2<7>)
+     DSP48A1:B7->P47      18   4.394   1.049  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT_P47_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT1)
+     DSP48A1:C30->PCOUT47    1   2.689   0.000  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT1 (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT1_PCOUT_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT2_PCIN_47)
+     DSP48A1:PCIN47->P47   18   2.264   1.049  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT2 (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT2_P47_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT3)
+     DSP48A1:C30->P2     108   2.687   1.899  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT3 (Single_Cpu_real/Stage_3/Stage_3_Alu/alu_data_1[31]_alu_data_2[31]_MuLt_32_OUT<36>)
+     LUT6:I5->O           17   0.205   1.028  Single_Cpu_real/Stage_3/Mmux_alu_result2714 (Single_Cpu_real/Stage_3/Mmux_alu_result2713)
+     LUT6:I5->O           13   0.205   0.933  Single_Cpu_real/Stage_4/Stage_4_Memory/addr[5]_BUS_0004_AND_2554_o1 (Single_Cpu_real/Stage_4/Stage_4_Memory/addr[5]_BUS_0004_AND_2554_o)
+     LUT6:I5->O            8   0.205   0.803  Single_Cpu_real/Stage_4/Stage_4_Memory/mem_length[1]_GND_59_o_wide_mux_465_OUT<424>511 (Single_Cpu_real/Stage_4/Stage_4_Memory/mem_length[1]_GND_59_o_wide_mux_465_OUT<424>51)
+     LUT6:I5->O            1   0.205   0.580  Single_Cpu_real/Stage_4/Stage_4_Memory/mem_length[1]_GND_59_o_wide_mux_465_OUT<431>2 (Single_Cpu_real/Stage_4/Stage_4_Memory/mem_length[1]_GND_59_o_wide_mux_465_OUT<431>2)
+     LUT6:I5->O            1   0.205   0.000  Single_Cpu_real/Stage_4/Stage_4_Memory/mem_length[1]_GND_59_o_wide_mux_465_OUT<431>4 (Single_Cpu_real/Stage_4/Stage_4_Memory/mem_length[1]_GND_59_o_wide_mux_465_OUT<80>)
+     FDE_1:D                   0.102          Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_80
     ----------------------------------------
-    Total                     23.547ns (13.803ns logic, 9.744ns route)
-                                       (58.6% logic, 41.4% route)
+    Total                     28.196ns (14.422ns logic, 13.774ns route)
+                                       (51.2% logic, 48.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 45 / 45
+  Total number of paths / destination ports: 68 / 68
 -------------------------------------------------------------------------
-Offset:              4.442ns (Levels of Logic = 2)
+Offset:              4.321ns (Levels of Logic = 2)
   Source:            Reset (PAD)
   Destination:       Input_ClockDivider/DividedClock (FF)
   Destination Clock: CLK rising
@@ -1596,18 +1293,18 @@ Offset:              4.442ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            81   1.222   2.116  Reset_IBUF (Reset_IBUF)
-     LUT6:I0->O            1   0.203   0.579  Input_ClockDivider/_n0018_inv1 (Input_ClockDivider/_n0018_inv)
+     IBUF:I->O           105   1.222   1.995  Reset_IBUF (Reset_IBUF)
+     LUT2:I0->O            1   0.203   0.579  Input_ClockDivider/_n0018_inv1 (Input_ClockDivider/_n0018_inv)
      FDE:CE                    0.322          Input_ClockDivider/DividedClock
     ----------------------------------------
-    Total                      4.442ns (1.747ns logic, 2.695ns route)
-                                       (39.3% logic, 60.7% route)
+    Total                      4.321ns (1.747ns logic, 2.574ns route)
+                                       (40.4% logic, 59.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'M1_ClockDivider/DividedClock'
   Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              3.403ns (Levels of Logic = 1)
+Offset:              3.542ns (Levels of Logic = 1)
   Source:            Reset (PAD)
   Destination:       M2_SevenSegsController/select_display_2 (FF)
   Destination Clock: M1_ClockDivider/DividedClock rising
@@ -1616,31 +1313,32 @@ Offset:              3.403ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            81   1.222   1.751  Reset_IBUF (Reset_IBUF)
+     IBUF:I->O           105   1.222   1.890  Reset_IBUF (Reset_IBUF)
      FDC:CLR                   0.430          M2_SevenSegsController/select_display_0
     ----------------------------------------
-    Total                      3.403ns (1.652ns logic, 1.751ns route)
-                                       (48.5% logic, 51.5% route)
+    Total                      3.542ns (1.652ns logic, 1.890ns route)
+                                       (46.6% logic, 53.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Input_ClockDivider/DividedClock'
-  Total number of paths / destination ports: 46 / 46
+  Total number of paths / destination ports: 558 / 558
 -------------------------------------------------------------------------
-Offset:              4.783ns (Levels of Logic = 2)
+Offset:              7.084ns (Levels of Logic = 3)
   Source:            Reset (PAD)
-  Destination:       Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62 (RAM)
+  Destination:       Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_511 (FF)
   Destination Clock: Input_ClockDivider/DividedClock falling
 
-  Data Path: Reset to Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62
+  Data Path: Reset to Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_511
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            81   1.222   2.096  Reset_IBUF (Reset_IBUF)
-     LUT5:I0->O           14   0.203   0.957  Single_Cpu_real/Stage_2/Stage_2_Register/regwrite_register_w[4]_AND_7_o_09 (Single_Cpu_real/Stage_2/Stage_2_Register/regwrite_register_w[4]_AND_7_o_0)
-     RAM32M:WE                 0.304          Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers11
+     IBUF:I->O           105   1.222   2.119  Reset_IBUF (Reset_IBUF)
+     LUT3:I0->O            1   0.205   0.924  Single_Cpu_real/Stage_4/Stage_4_Memory/_n1338_inv_SW0 (N190)
+     LUT6:I1->O          512   0.203   2.090  Single_Cpu_real/Stage_4/Stage_4_Memory/_n1338_inv (Single_Cpu_real/Stage_4/Stage_4_Memory/_n1338_inv)
+     FDE_1:CE                  0.322          Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_0
     ----------------------------------------
-    Total                      4.783ns (1.729ns logic, 3.054ns route)
-                                       (36.2% logic, 63.8% route)
+    Total                      7.084ns (1.952ns logic, 5.132ns route)
+                                       (27.6% logic, 72.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'M1_ClockDivider/DividedClock'
@@ -1666,34 +1364,25 @@ Offset:              7.341ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Input_ClockDivider/DividedClock'
-  Total number of paths / destination ports: 72038551452 / 7
+  Total number of paths / destination ports: 168 / 7
 -------------------------------------------------------------------------
-Offset:              28.853ns (Levels of Logic = 13)
-  Source:            Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 (FF)
+Offset:              6.800ns (Levels of Logic = 4)
+  Source:            Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_189 (FF)
   Destination:       Segs<6> (PAD)
-  Source Clock:      Input_ClockDivider/DividedClock rising
+  Source Clock:      Input_ClockDivider/DividedClock falling
 
-  Data Path: Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 to Segs<6>
+  Data Path: Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_189 to Segs<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              6   0.447   0.849  Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3 (Single_Cpu_real/Stage_1/Stage_1_Pc/new_pc_3)
-     LUT2:I0->O           19   0.203   1.416  Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/Msub_address_Madd_xor<3>11 (Single_Cpu_real/Stage_1/Stage_1_Inst_Rom/address<3>)
-     LUT5:I0->O          233   0.203   2.062  Single_Cpu_real_instruction<27>1 (Single_Cpu_real/Stage_3/Stage_3_Alu/GND_16_o_GND_16_o_sub_105_OUT<2>1)
-     LUT5:I4->O           14   0.205   0.958  Single_Cpu_real/Stage_2/Stage_2_Controller/alusrc1_1 (Single_Cpu_real/Stage_2/Stage_2_Controller/alusrc1)
-     LUT3:I2->O           17   0.205   1.027  Single_Cpu_real/Stage_2/Mmux_alu_data_2281 (Single_Cpu_real/Stage_3/Stage_3_Alu/Sh133)
-     DSP48A1:B5->P47      18   4.394   1.049  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT_P47_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT1)
-     DSP48A1:C30->PCOUT47    1   2.689   0.000  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT1 (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT1_PCOUT_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT2_PCIN_47)
-     DSP48A1:PCIN47->P47   18   2.264   1.049  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT2 (Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT2_P47_to_Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT3)
-     DSP48A1:C30->P5       1   2.687   0.684  Single_Cpu_real/Stage_3/Stage_3_Alu/Mmult_alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT3 (Single_Cpu_real/Stage_3/Stage_3_Alu/alu_data_1[31]_alu_data_2[31]_MuLt_29_OUT<39>)
-     LUT6:I4->O            3   0.203   0.898  Single_Cpu_real/Stage_3/Mmux_alu_result3015 (n0003<7>)
-     LUT6:I2->O            1   0.203   0.580  M2_SevenSegsController/Mmux_four_digits41 (M2_SevenSegsController/Mmux_four_digits4)
-     LUT6:I5->O            7   0.205   1.021  M2_SevenSegsController/Mmux_four_digits42 (M2_SevenSegsController/four_digits<3>)
-     LUT5:I1->O            1   0.203   0.579  M2_SevenSegsController/M1_SevenSegs/Mmux_A_G51 (Segs_2_OBUF)
-     OBUF:I->O                 2.571          Segs_2_OBUF (Segs<2>)
+     FDE_1:C->Q            6   0.447   0.992  Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_189 (Single_Cpu_real/Stage_4/Stage_4_Memory/mem_0_189)
+     LUT6:I2->O            1   0.203   0.580  M2_SevenSegsController/Mmux_four_digits21 (M2_SevenSegsController/Mmux_four_digits2)
+     LUT6:I5->O            7   0.205   1.021  M2_SevenSegsController/Mmux_four_digits22 (M2_SevenSegsController/four_digits<1>)
+     LUT5:I1->O            1   0.203   0.579  M2_SevenSegsController/M1_SevenSegs/Mmux_A_G61 (Segs_1_OBUF)
+     OBUF:I->O                 2.571          Segs_1_OBUF (Segs<1>)
     ----------------------------------------
-    Total                     28.853ns (16.682ns logic, 12.171ns route)
-                                       (57.8% logic, 42.2% route)
+    Total                      6.800ns (3.629ns logic, 3.171ns route)
+                                       (53.4% logic, 46.6% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1726,7 +1415,7 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    4.892|         |         |         |
+CLK            |    5.205|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Input_ClockDivider/DividedClock
@@ -1734,8 +1423,9 @@ Clock to Setup on destination clock Input_ClockDivider/DividedClock
                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
-Input_ClockDivider/DividedClock           |   19.509|   14.956|   23.547|         |
-Single_Cpu_real/Stage_3/Stage_3_Alu/_n0303|         |         |    1.179|         |
+Input_ClockDivider/DividedClock           |   15.903|   10.904|   28.196|         |
+Single_Cpu_real/Stage_3/Stage_3_Alu/_n0304|         |         |    1.179|         |
+Single_Cpu_real/memread                   |         |         |    2.564|         |
 ------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock M1_ClockDivider/DividedClock
@@ -1746,25 +1436,33 @@ Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 M1_ClockDivider/DividedClock|    2.405|         |         |         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock Single_Cpu_real/Stage_3/Stage_3_Alu/_n0303
+Clock to Setup on destination clock Single_Cpu_real/Stage_3/Stage_3_Alu/_n0304
 -------------------------------+---------+---------+---------+---------+
                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------+---------+---------+---------+---------+
-Input_ClockDivider/DividedClock|         |         |    7.880|         |
+Input_ClockDivider/DividedClock|         |         |    8.466|         |
+-------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Single_Cpu_real/memread
+-------------------------------+---------+---------+---------+---------+
+                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------+---------+---------+---------+---------+
+Input_ClockDivider/DividedClock|         |         |   30.360|         |
 -------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 59.00 secs
-Total CPU time to Xst completion: 59.27 secs
+Total REAL time to Xst completion: 210.00 secs
+Total CPU time to Xst completion: 210.84 secs
  
 --> 
 
-Total memory usage is 4627660 kilobytes
+Total memory usage is 4600332 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  114 (   0 filtered)
+Number of warnings :   88 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

@@ -21,7 +21,8 @@
 module Single_Cpu(
     input                                               clock   ,
     input                                               reset   ,
-    output          [31:0]                              data_result 
+    output          [31:0]                              data_result ,
+    output          [31:0]                              print_data  
     );
 
     wire            [31:0]                              instruction ;
@@ -131,7 +132,8 @@ module Single_Cpu(
       .memread(memread),
       .memwrite(memwrite),
       .alu_result(alu_result),
-      .mem_read_data(mem_read_data)
+      .mem_read_data(mem_read_data),
+      .print_data(print_data)
     );
 
     Stage_5 Stage_5(

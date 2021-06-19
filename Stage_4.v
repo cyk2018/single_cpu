@@ -27,7 +27,8 @@ module Stage_4(
     input                                               memread ,
     input                                               memwrite    ,
     input           [31:0]                              alu_result  ,
-    output          [31:0]                              mem_read_data   
+    output          [31:0]                              mem_read_data  ,
+    output          [31:0]                              print_data  
     );
 
     Memory Stage_4_Memory(
@@ -39,7 +40,8 @@ module Stage_4(
         .mem_write_data(reg_data_2),
         .memread(memread),
         .memwrite(memwrite),
-        .mem_read_data(mem_read_data)
+        .mem_read_data(mem_read_data),
+        .print_data(print_data)
     );
 
 endmodule

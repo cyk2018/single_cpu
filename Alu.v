@@ -31,7 +31,8 @@ module Alu(
     input           [31:0]                              alu_data_2  ,
     output  reg                                         zero    ,
     output  reg     [31:0]                              alu_result  ,
-    output  reg     [31:0]                              w_cpdata    
+    output  reg     [31:0]                              w_cpdata    ,
+    output  reg                                         syscall 
     );
 
     reg             [63:0]                              long_operand    ;
@@ -39,7 +40,6 @@ module Alu(
     reg             [32:0]                              ex_operand_2   ;
     reg             [32:0]                              ex_result   ;
     reg                                                overflow    ;
-    reg                                                 syscall ;
     reg                                                 _break  ;
     reg             [31:0]                              shift_data_1    ;
     reg             [31:0]                              shift_data_2    ;
@@ -210,6 +210,8 @@ module Alu(
                 6'b001100:begin
                     // syscall
                     syscall = 1;
+                    // jump to 000400EC
+
                 end
                 default: alu_result = 32'h0;
             endcase 

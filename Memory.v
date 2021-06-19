@@ -27,7 +27,8 @@ module Memory(
     input           [31:0]                              mem_write_data  ,
     input                                               memread ,
     input                                               memwrite    ,
-    output  reg     [31:0]                              mem_read_data   
+    output  reg     [31:0]                              mem_read_data   ,
+    output          [31:0]                              print_data  
     );
 
     reg             [7:0]                              mem [63:0];
@@ -84,6 +85,8 @@ module Memory(
             endcase    
         end
     end
+
+    assign print_data = {mem[20], mem[21], mem[22], mem[23]};
 
 
 endmodule
