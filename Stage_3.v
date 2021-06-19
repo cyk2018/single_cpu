@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Stage_3(
+    input                                               clock   ,
     input                                               sc  ,
     input                                               j   ,
     input                                               link ,
@@ -29,6 +30,7 @@ module Stage_3(
     input           [4:0]                               sa  ,
     input           [4:0]                               rs  ,
     input           [4:0]                               rt  ,
+    input           [4:0]                               rd  ,
     input           [25:0]                              instr_index ,
     input           [15:0]                              imm ,
     input           [31:0]                              alu_data_1  ,
@@ -53,6 +55,7 @@ module Stage_3(
         .sa(sa),
         .rs(rs),
         .rt(rt),
+        .rd(rd),
         .imm(imm),
         .alu_data_1(alu_data_1),
         .alu_data_2(alu_data_2),
@@ -63,6 +66,8 @@ module Stage_3(
     );
 
     CoProcessor CP0(
+        .func(func),
+        .clock(clock),
         .sc(sc),
         .op(op),
         .rs(rs),

@@ -8,7 +8,7 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers62/SPO</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">3</arg> more times for the following (max. 5 shown):
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">3</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers61/SPO,
 Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers161/SPO,
 Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers162/SPO</arg>
@@ -42,34 +42,34 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers2_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers5_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers15_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers11_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers3_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers12_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers14_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers15_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers2_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers3_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 </messages>

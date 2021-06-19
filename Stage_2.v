@@ -66,6 +66,7 @@ module Stage_2(
 
     Controller Stage_2_Controller
     (
+        .rs(rs),
         .rd(rd),
         .rt(rt),
         .func    (func    ),

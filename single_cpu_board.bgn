@@ -6,7 +6,7 @@ C:\Xilinx\14.7\ISE_DS\ISE\.
 speed -3
 Opened constraints file Single_Cpu_board.pcf.
 
-Wed Jun 16 19:03:34 2021
+Sat Jun 19 10:33:35 2021
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g Reset_on_err:No -g ConfigRate:2 -g ProgPin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:No -g SPI_buswidth:1 -g TIMER_CFG:0xFFFF -g multipin_wakeup:No -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No -g en_sw_gsr:No -g drive_awake:No -g sw_clk:Startupclk -g sw_gwe_cycle:5 -g sw_gts_cycle:4 Single_Cpu_board.ncd 
 
@@ -130,34 +130,34 @@ There were 0 CONFIG constraint(s) processed from Single_Cpu_board.pcf.
 
 Running DRC.
 WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers2_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers5_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers1_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers15_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers11_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers3_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers12_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers4_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
    <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers14_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers15_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers2_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers3_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <Single_Cpu_real/Stage_2/Stage_2_Register/Mram_registers13_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 DRC detected 0 errors and 10 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

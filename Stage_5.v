@@ -26,5 +26,6 @@ module Stage_5(
     );
 
     assign write_data = memtoreg ? mem_read_data : alu_result;
+    // memtoreg is 1 show that read data from mem to reg
 
 endmodule

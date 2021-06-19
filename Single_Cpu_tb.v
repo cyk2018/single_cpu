@@ -40,12 +40,19 @@ module Single_Cpu_tb;
 
 	initial begin
 		// Initialize Inputs
-		clock = 0;
+		clock = 1;
 		reset = 1;
 
 		// Wait 100 ns for global reset to finish
-		#100;
+		#150;
         reset = 0;
+
+
+		// #500;
+		// reset = 1;
+// 
+		// #100;
+		// reset = 0;
 		// Add stimulus here
 	end
     always begin

@@ -8,6 +8,7 @@ Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Memory.v" into library work
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Inst_Rom.v" into library work
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Expand.v" into library work
+Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/CoProcessor.v" into library work
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Controller.v" into library work
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Alu.v" into library work
 Analyzing Verilog file "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Stage_5.v" into library work
@@ -28,6 +29,7 @@ Compiling module Controller
 Compiling module Expand
 Compiling module Stage_2
 Compiling module Alu
+Compiling module CoProcessor
 Compiling module Stage_3
 Compiling module Memory
 Compiling module Stage_4
@@ -37,7 +39,7 @@ Compiling module Single_Cpu_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 15 Verilog Units
+Compiled 16 Verilog Units
 Built simulation executable C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb_isim_beh.exe
-Fuse Memory Usage: 29500 KB
-Fuse CPU Usage: 562 ms
+Fuse Memory Usage: 29552 KB
+Fuse CPU Usage: 718 ms

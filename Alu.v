@@ -25,6 +25,7 @@ module Alu(
     input           [4:0]                               sa  ,
     input           [4:0]                               rs  ,
     input           [4:0]                               rt  ,
+    input           [4:0]                               rd  ,
     input           [15:0]                              imm ,
     input           [31:0]                              alu_data_1  ,
     input           [31:0]                              alu_data_2  ,
@@ -39,6 +40,9 @@ module Alu(
     reg             [32:0]                              ex_result   ;
     reg                                                overflow    ;
     reg                                                 syscall ;
+    reg                                                 _break  ;
+    reg             [31:0]                              shift_data_1    ;
+    reg             [31:0]                              shift_data_2    ;
 
     always @(*) begin
         long_operand = 0;
@@ -46,6 +50,7 @@ module Alu(
         zero = 0;
         alu_result = 32'h0;
         syscall = 0;
+        _break = 0;
         case (func)
         6'b000000:
             case (op)
@@ -200,7 +205,7 @@ module Alu(
                 end
                 6'b001101:begin
                     // break
-                    break = 1;
+                    _break = 1;
                 end
                 6'b001100:begin
                     // syscall
@@ -328,19 +333,32 @@ module Alu(
         6'b011111:begin
             if(~|op)begin
                 // ext
-                alu_result = {alu_data_2[31:rd + 1], alu_data_1[rd + sa:sa]};
+                // we use shift to complete this instruction, because in ise 14.7 variable as index is not supported, and 'ins' is same
+                shift_data_1 = (alu_data_1 << (32 - (rd + sa))) >> (32 - sa);
+                shift_data_2 = (alu_data_2 >> (rd + 1) ) << (rd + 1);
+                alu_result = shift_data_1 | shift_data_2;
             end
             else begin
                 // ins
-                alu_result = {alu_data_2[31:rd + 1], alu_data_1[rd - sa:0], alu_data_2[sa - 1:0]};
+                shift_data_1 = (alu_data_1 << (32 - rd + sa - 1)) >> (32 - rd - 1);
+                shift_data_2 = ~(((32'hffffffff >> sa) << (32 - rd + sa - 1)) >> (32 - rd - 1)) & alu_data_2;
+                alu_result = shift_data_1 | shift_data_2;
             end
         end
         6'b010000:begin
-            // di ei mfc0
-            alu_result = cpdata;
             if(rs == 5'b00100)begin
                 // mtc0
                 w_cpdata = alu_data_2;
+            end
+            else if(rs == 5'b00000)begin
+                // mfc0
+                alu_result = cpdata;
+            end
+            else if(rs == 5'b01011)begin
+                alu_result = cpdata;
+            end
+            else begin
+                // eret
             end
         end
         default: alu_result = 32'h0;

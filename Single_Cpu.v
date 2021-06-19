@@ -99,6 +99,7 @@ module Single_Cpu(
     );
 
     Stage_3 Stage_3(
+      .clock(clock),
       .sc(sc),
       .j(j),
       .link(link),
@@ -109,6 +110,7 @@ module Single_Cpu(
       .sa(sa),
       .rs(rs),
       .rt(rt),
+      .rd(rd),
       .instr_index(instr_index),
       .imm(imm),
       .alu_data_1(alu_data_1),

@@ -22,8 +22,8 @@
 #define alloca _alloca
 #endif
 static const char *ng0 = "C:/Users/29593/Documents/cyk/computer-system/single_cpu/single_cpu/Single_Cpu_tb.v";
-static int ng1[] = {0, 0};
-static int ng2[] = {1, 0};
+static int ng1[] = {1, 0};
+static int ng2[] = {0, 0};
 
 
 
@@ -47,24 +47,24 @@ LAB4:    xsi_set_current_line(43, ng0);
     t3 = (t0 + 1448);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
     xsi_set_current_line(44, ng0);
-    t2 = ((char*)((ng2)));
+    t2 = ((char*)((ng1)));
     t3 = (t0 + 1608);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
     xsi_set_current_line(47, ng0);
     t2 = (t0 + 2336);
-    xsi_process_wait(t2, 100000LL);
+    xsi_process_wait(t2, 150000LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
 LAB5:    xsi_set_current_line(48, ng0);
-    t2 = ((char*)((ng1)));
+    t2 = ((char*)((ng2)));
     t3 = (t0 + 1608);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
     goto LAB1;
 
 }
 
-static void Always_51_1(char *t0)
+static void Always_58_1(char *t0)
 {
     char t3[8];
     char *t1;
@@ -97,15 +97,15 @@ LAB0:    t1 = (t0 + 2776U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(51, ng0);
+LAB2:    xsi_set_current_line(58, ng0);
 
-LAB4:    xsi_set_current_line(52, ng0);
+LAB4:    xsi_set_current_line(59, ng0);
     t2 = (t0 + 2584);
     xsi_process_wait(t2, 50000LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(52, ng0);
+LAB5:    xsi_set_current_line(59, ng0);
     t2 = (t0 + 1448);
     t4 = (t2 + 56U);
     t5 = *((char **)t4);
@@ -159,7 +159,7 @@ LAB11:    t17 = *((unsigned int *)t3);
 
 extern void work_m_00000000003997930409_0591370230_init()
 {
-	static char *pe[] = {(void *)Initial_41_0,(void *)Always_51_1};
+	static char *pe[] = {(void *)Initial_41_0,(void *)Always_58_1};
 	xsi_register_didat("work_m_00000000003997930409_0591370230", "isim/Single_Cpu_tb_isim_beh.exe.sim/work/m_00000000003997930409_0591370230.didat");
 	xsi_register_executes(pe);
 }
